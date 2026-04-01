@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fauma Backoffice - Proyectos / Campañas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#7e2a25",
+                        "surface": "#fff8f2",
+                        "secondary-fixed": "#ffdad6",
+                        "outline-variant": "#bec8c9",
+                        "on-secondary-fixed": "#410003",
+                        "surface-dim": "#dfd9d3",
+                        "surface-container-highest": "#e8e1dc",
+                        "outline": "#6f797a",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "surface-container-low": "#f9f2ec",
+                        "on-primary-container": "#a1e9f1",
+                        "surface-bright": "#fff8f2",
+                        "primary-container": "#1a6b72",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#321200",
+                        "primary-fixed-dim": "#8bd2da",
+                        "primary-fixed": "#a6eff6",
+                        "tertiary-container": "#8c532f",
+                        "surface-container": "#f3ede7",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eee7e1",
+                        "secondary-container": "#fc8b80",
+                        "on-surface": "#1e1b18",
+                        "on-background": "#1e1b18",
+                        "on-surface-variant": "#3f484a",
+                        "on-primary-fixed": "#002022",
+                        "background": "#fff8f2",
+                        "tertiary-fixed": "#ffdbc9",
+                        "surface-variant": "#e8e1dc",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f6f0ea",
+                        "surface-tint": "#15686f",
+                        "primary": "#005258",
+                        "inverse-surface": "#33302c",
+                        "inverse-primary": "#8bd2da",
+                        "tertiary": "#703c1a",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "on-primary-fixed-variant": "#004f55",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#74231f",
+                        "on-tertiary-container": "#ffd4bd",
+                        "secondary": "#9d413a",
+                        "on-tertiary-fixed-variant": "#6c3918",
+                        "on-error": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f2; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { background-color: #1A6B72; color: #A6EFF6; font-weight: 600; border-top-right-radius: 1.5rem; border-bottom-right-radius: 1.5rem; margin-right: 1rem; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-primary flex flex-col py-8 z-50">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-bold text-white tracking-tight">Fauma Backoffice</h1>
+<p class="text-xs text-primary-fixed-dim opacity-80 uppercase tracking-widest mt-1">The Precision Curator</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-primary-fixed-dim/70 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 sidebar-active transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">folder_special</span>
+<span class="text-sm">Proyectos / Campañas</span>
+</a>
+<a class="flex items-center px-6 py-3 text-primary-fixed-dim/70 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="text-sm">Audiencia</span>
+</a>
+<a class="flex items-center px-6 py-3 text-primary-fixed-dim/70 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">analytics</span>
+<span class="text-sm">Reportes</span>
+</a>
+<a class="flex items-center px-6 py-3 text-primary-fixed-dim/70 hover:text-white transition-colors group mt-auto" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="text-sm">Ajustes</span>
+</a>
+</nav>
+<div class="px-6 mt-8">
+<div class="flex items-center gap-3 p-3 bg-primary-container/30 rounded-xl">
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="professional portrait of a middle-aged male administrator in a modern office with soft cinematic lighting and bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWqetLx1szjJAmA4eEOVFtkb2ZNLfDEaBYGm6sTlK78EGbi9CpgKWNrBabumVhMku6uvSGmvM8KwJmAZaJlycRbsLi0KN7MItlu41Pr6rsFKHxOpMXpyl8iFH4e1EOZQ84tZyIruKRKV5CqK9D-KWkVBeeO9rzuNQXAyeiucOezCmaq79U0496aQDa2O-uZMj9kNNpa1a0_L5tlry0hqccHHx8TLhJo1sktl7Q3fuDuSHf1_cqz6c3YwAirAUuQrOOjE7NnOImqzAW"/>
+<div class="overflow-hidden">
+<p class="text-sm font-medium text-white truncate">Carlos Méndez</p>
+<p class="text-xs text-primary-fixed-dim/60 truncate">Curador Jefe</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="h-16 bg-surface-container-low flex items-center justify-between px-8 sticky top-0 z-40">
+<div class="flex-1 flex items-center">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50" placeholder="Buscar proyectos, etiquetas o fases..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+<div class="text-right mr-2 hidden lg:block">
+<p class="text-xs font-semibold text-on-surface">Proyectos / Campañas</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Sección Activa</p>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface mb-2">Proyectos y Campañas</h2>
+<p class="text-on-surface-variant">Gestiona el ciclo de vida de las iniciativas de conservación y sus fases de contenido.</p>
+</div>
+<button class="bg-gradient-to-br from-secondary to-[#F4847A] text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                    Nuevo proyecto
+                </button>
+</div>
+<!-- Project List Vertical Stack -->
+<div class="space-y-8">
+<!-- Project 1: ACTIVE CARD -->
+<div class="group">
+<div class="bg-surface-container-lowest rounded-xl p-6 flex gap-8 transition-all duration-500 hover:shadow-xl hover:shadow-on-surface/5 relative overflow-hidden">
+<!-- Lab Photo -->
+<div class="w-[220px] h-[180px] flex-shrink-0 relative">
+<img alt="Shark eggs lab" class="w-full h-full object-cover rounded-lg" data-alt="close-up of translucent small shark eggs in a laboratory setting with clean blue lighting and medical glassware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXtPiZwijXYWMIrchxX4wQxcIZAkH5u7oLd4HxdYI__Pg0t2NuvNkDgKYaiII3iuTmtUNIoJS2PhEBDDq6ZF3S-A8BVkJaKfk7YW8zxEjuNi_pCM2O_8NDA4ojoSIeaMt4AQot0eXF02elmQH-uWSM_9XjqVhhfK-9tvgPmU3OdfTvVqQbUFOy5P2bSXLj1WHLkrx28igO_TfdCyIPHbHPbZKk9lUiupWjV0P9xwxCbxuvNLCuMD92sFDEbkYiMJfr7Fq4UqXEvWI"/>
+<div class="absolute top-3 left-3 bg-primary/90 text-primary-fixed text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">
+                                ID: PRJ-2027-01
+                            </div>
+</div>
+<!-- Center Content -->
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">Desarrollo de huevos de Pintarroja</h3>
+<span class="bg-primary-container/20 text-primary px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">En curso</span>
+</div>
+<p class="text-sm mb-4">
+<span class="italic font-medium text-on-surface-variant">Scyliorhinus canicula</span>
+<span class="mx-2 text-outline-variant">•</span>
+<span class="text-outline font-medium">Oceanogràfic, Valencia</span>
+</p>
+</div>
+<!-- Progress Bar -->
+<div class="mb-4">
+<div class="flex justify-between text-xs font-semibold mb-2">
+<span class="text-primary">Fase 3 de 6</span>
+<span class="text-on-surface-variant">Siguiente: Monitorización activa</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="flex items-center gap-8 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">group</span>
+<span class="font-semibold">234 <span class="text-on-surface-variant font-normal">suscriptores</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">payments</span>
+<span class="font-semibold">€3,510<span class="text-on-surface-variant font-normal">/mes</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">description</span>
+<span class="font-semibold">47 <span class="text-on-surface-variant font-normal">contenidos</span></span>
+</div>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="w-64 border-l border-outline-variant/20 pl-8 flex flex-col justify-between py-1">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Duración estimada</p>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="font-medium text-sm">6 meses (Ene-Jun 2027)</span>
+</div>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-high hover:bg-surface-container-highest text-on-surface py-2 rounded-lg text-xs font-bold transition-all">Editar</button>
+<button class="flex-1 bg-surface-container-high hover:bg-surface-container-highest text-on-surface py-2 rounded-lg text-xs font-bold transition-all">Gestionar fases</button>
+</div>
+<button class="w-full bg-primary/5 hover:bg-primary/10 text-primary py-2 rounded-lg text-xs font-bold transition-all">Ver contenido drip</button>
+</div>
+<button class="absolute top-6 right-6 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Expanded Panel: Phase Timeline -->
+<div class="mt-4 bg-surface-container-low rounded-xl p-8 border border-primary/5">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">account_tree</span>
+                                Cronograma del Proyecto
+                            </h4>
+<a class="text-xs font-bold text-secondary hover:underline" href="#">Gestionar todas las fases →</a>
+</div>
+<div class="grid grid-cols-6 gap-4 relative">
+<!-- Timeline Line -->
+<div class="absolute top-[1.375rem] left-8 right-8 h-0.5 bg-outline-variant/30 z-0"></div>
+<!-- Phase 1 -->
+<div class="relative z-10 text-center space-y-3 opacity-60">
+<div class="w-11 h-11 bg-primary text-white rounded-full mx-auto flex items-center justify-center font-bold shadow-md">1</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase truncate">Preparación</p>
+<p class="text-[9px] text-on-surface-variant">01 - 15 Ene</p>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="relative z-10 text-center space-y-3 opacity-60">
+<div class="w-11 h-11 bg-primary text-white rounded-full mx-auto flex items-center justify-center font-bold shadow-md">2</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase truncate">Incubación</p>
+<p class="text-[9px] text-on-surface-variant">16 - 31 Ene</p>
+</div>
+</div>
+<!-- Phase 3 (ACTIVE) -->
+<div class="relative z-10 text-center space-y-3">
+<div class="w-11 h-11 bg-primary text-white rounded-full mx-auto flex items-center justify-center font-bold shadow-lg ring-4 ring-primary-fixed/50">3</div>
+<div>
+<p class="text-[10px] font-bold text-primary uppercase">Monitorización</p>
+<p class="text-[9px] text-on-surface-variant">Feb - Abr</p>
+</div>
+</div>
+<!-- Phase 4 -->
+<div class="relative z-10 text-center space-y-3 opacity-40">
+<div class="w-11 h-11 bg-surface-container-highest text-on-surface-variant rounded-full mx-auto flex items-center justify-center font-bold">4</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase truncate">Eclosión</p>
+<p class="text-[9px] text-on-surface-variant">Mayo</p>
+</div>
+</div>
+<!-- Phase 5 -->
+<div class="relative z-10 text-center space-y-3 opacity-40">
+<div class="w-11 h-11 bg-surface-container-highest text-on-surface-variant rounded-full mx-auto flex items-center justify-center font-bold">5</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase truncate">Marcaje</p>
+<p class="text-[9px] text-on-surface-variant">Junio</p>
+</div>
+</div>
+<!-- Phase 6 -->
+<div class="relative z-10 text-center space-y-3 opacity-40">
+<div class="w-11 h-11 bg-surface-container-highest text-on-surface-variant rounded-full mx-auto flex items-center justify-center font-bold">6</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface uppercase truncate">Liberación</p>
+<p class="text-[9px] text-on-surface-variant">Julio</p>
+</div>
+</div>
+</div>
+<!-- Nested Sub-phases for Phase 3 -->
+<div class="mt-8 bg-surface-container-lowest rounded-xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<h5 class="text-xs font-bold text-on-surface">3.1 Primera revisión microscópica</h5>
+<span class="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-bold">Día 1</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-3">Inspección de la vitalidad del embrión y fijación de parámetros iniciales.</p>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">visibility</span> Editar contenido
+                                </button>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<h5 class="text-xs font-bold text-on-surface">3.2 Seguimiento semanal</h5>
+<span class="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-bold">Día 15</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-3">Actualización fotográfica para los suscriptores y reporte de temperatura.</p>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">visibility</span> Editar contenido
+                                </button>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<h5 class="text-xs font-bold text-on-surface">3.3 Análisis genético</h5>
+<span class="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-bold">Día 30</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mb-3">Muestreo no invasivo para determinación de linaje y robustez biológica.</p>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">visibility</span> Editar contenido
+                                </button>
+</div>
+<button class="flex items-center justify-center gap-2 py-4 border-2 border-dashed border-outline-variant/50 rounded-lg hover:bg-primary/5 hover:border-primary/30 transition-all text-on-surface-variant group">
+<span class="material-symbols-outlined text-lg group-hover:text-primary">add_circle</span>
+<span class="text-xs font-bold group-hover:text-primary">Añadir subfase</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project 2: DRAFT CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex gap-8 transition-all duration-500 opacity-80 hover:opacity-100">
+<!-- Dolphin Photo -->
+<div class="w-[220px] h-[180px] flex-shrink-0 relative grayscale group-hover:grayscale-0 transition-all">
+<img alt="Common Dolphin" class="w-full h-full object-cover rounded-lg" data-alt="bottlenose dolphin surfacing in sparkling blue ocean water with morning light reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe60R4v5f8yAFitypaaxrOiUUZjtrjSzXl1eR3Wj3wkzKOSEeeJJ6HP7hhuahO3IaoSsxuL-d1DvZUz7POrGy4jfUNN9JHBrY6Ajw4FqgdmjheHjh_g5UudavZnVs9NcdSv5CPQ37U45RLqf53_68gJssGx8JSsymrqPbTAnc--Xu1iR9EX4LsQJ5bpa-t_jyypuLVA_Kn-FkS3b-8OlhwlUqqnKKfWgMOMGj6MHT8aJRZE-wePwf-p0XF-j5l4QUaf4Tnc3ONy8VN"/>
+<div class="absolute inset-0 bg-on-surface/10 rounded-lg"></div>
+</div>
+<!-- Center Content -->
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-bold text-on-surface">Recuperación del Delfín mular</h3>
+<span class="bg-tertiary-container/20 text-tertiary px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">Borrador</span>
+</div>
+<p class="text-sm mb-4">
+<span class="italic font-medium text-on-surface-variant">Tursiops truncatus</span>
+<span class="mx-2 text-outline-variant">•</span>
+<span class="text-outline font-medium">Costa del Sol, Málaga</span>
+</p>
+</div>
+<!-- Progress Bar (Empty) -->
+<div class="mb-4">
+<div class="flex justify-between text-xs font-semibold mb-2">
+<span class="text-on-surface-variant">Configuración pendiente</span>
+<a class="text-secondary font-bold hover:underline" href="#">Completar configuración →</a>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="flex items-center gap-8 text-sm opacity-40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-semibold">0 <span class="text-on-surface-variant font-normal">suscriptores</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span class="font-semibold">€0<span class="text-on-surface-variant font-normal">/mes</span></span>
+</div>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="w-64 border-l border-outline-variant/20 pl-8 flex flex-col justify-end py-1">
+<div class="space-y-2">
+<button class="w-full bg-primary text-white py-2.5 rounded-lg text-xs font-bold hover:bg-primary-container transition-all">Lanzar proyecto</button>
+<button class="w-full bg-surface-container-high text-on-surface py-2 rounded-lg text-xs font-bold hover:bg-surface-container-highest transition-all">Editar borrador</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Pagination / Stats Summary -->
+<div class="mt-12 flex items-center justify-between py-6 border-t border-outline-variant/20">
+<p class="text-xs text-on-surface-variant font-medium">Mostrando 2 de 14 proyectos activos</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-bold text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-bold text-xs">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

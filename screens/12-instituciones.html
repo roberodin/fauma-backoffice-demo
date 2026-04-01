@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instituciones - The Precision Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#ffb4ac",
+              "surface-bright": "#fff8f2",
+              "surface-container-high": "#eee7e1",
+              "on-surface": "#1e1b18",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f3ede7",
+              "outline": "#6f797a",
+              "on-background": "#1e1b18",
+              "on-tertiary-container": "#ffd4bd",
+              "on-surface-variant": "#3f484a",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#004f55",
+              "inverse-surface": "#33302c",
+              "on-secondary-fixed-variant": "#7e2a25",
+              "secondary-fixed": "#ffdad6",
+              "on-error": "#ffffff",
+              "secondary-container": "#fc8b80",
+              "primary-container": "#1a6b72",
+              "surface-container-low": "#f9f2ec",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#ffdbc9",
+              "on-primary-fixed": "#002022",
+              "surface-tint": "#15686f",
+              "on-primary-container": "#a1e9f1",
+              "on-secondary-fixed": "#410003",
+              "primary-fixed": "#a6eff6",
+              "tertiary": "#703c1a",
+              "outline-variant": "#bec8c9",
+              "primary": "#005258",
+              "surface-dim": "#dfd9d3",
+              "surface": "#fff8f2",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#321200",
+              "primary-fixed-dim": "#8bd2da",
+              "surface-variant": "#e8e1dc",
+              "on-tertiary-fixed-variant": "#6c3918",
+              "secondary": "#9d413a",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#8c532f",
+              "inverse-primary": "#8bd2da",
+              "tertiary-fixed-dim": "#ffb68c",
+              "on-secondary-container": "#74231f",
+              "background": "#fff8f2",
+              "surface-container-highest": "#e8e1dc",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f6f0ea",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #FFF8F2;
+            color: #1E1B18;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#005258] dark:bg-slate-950 py-8 z-50">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-bold text-white tracking-tighter">Precision Curator</h1>
+<p class="text-[#A6EFF6]/60 text-xs font-medium uppercase tracking-widest mt-1">Management Portal</p>
+</div>
+<nav class="flex-1 space-y-2 px-4">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm hover:scale-[1.02] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Instituciones (Active Mapping) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#1A6B72] text-[#A6EFF6] rounded-xl font-semibold shadow-inner font-['Inter'] tracking-tight text-sm scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>Instituciones</span>
+</a>
+<!-- Reportes -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm hover:scale-[1.02] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reportes</span>
+</a>
+<!-- Configuración -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm hover:scale-[1.02] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+<!-- Archivos -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm hover:scale-[1.02] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archivos</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white hover:bg-[#1A6B72]/50 rounded-xl transition-all font-['Inter'] font-medium tracking-tight text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-[#F9F2EC] dark:bg-slate-800/50 flex justify-between items-center px-8 z-40">
+<div class="flex items-center gap-6 w-1/2">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Buscar instituciones..." type="text"/>
+</div>
+<span class="text-sm font-semibold text-primary/80 tracking-tight">Gestión de Instituciones</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-outline hover:bg-surface-container rounded-lg transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="p-2 text-outline hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Admin Curator</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Super User</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-xl object-cover ring-2 ring-primary/10" data-alt="Close-up professional portrait of a senior curator in a modern art gallery setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCww_Gj6Ys9R3AIVthuyAolwNw3OzRUb7EJX7E0AbqcCNP-oygNRGLmuXQzmtGqkDlQMud64vBXzYLizWZ6-LGF-_eVEKhU1OGP4Ztn3Ch4tN_NT_knoP1WAWprr4s9GiDzkHw3--EO12xZuPwUGSwomzkJIEFJ2FeCj59m63iTZ7TzJP1YsPOXfN4iFKnldPruX9OXS6wE2C20XdYI92g0cNrDgyiAhOgnHl_xojtmzE7HWU3_CfcZRAkyzS7wxcl8_rTBf4hmm3Xs"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-10 min-h-screen">
+<!-- Editorial Header -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<nav class="flex items-center gap-2 text-xs font-medium text-on-surface-variant/60 mb-2 uppercase tracking-widest">
+<span>Backoffice</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Instituciones</span>
+</nav>
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight font-headline leading-none">Instituciones y Partners</h2>
+<p class="text-on-surface-variant mt-3 text-lg max-w-2xl">Administra las entidades colaboradoras, sus proyectos activos y el impacto en la red de conservación.</p>
+</div>
+<button class="bg-gradient-to-br from-[#F4847A] to-[#D4645A] text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 shadow-lg hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Nueva institución
+            </button>
+</div>
+<!-- Asymmetric Bento Grid for Institutions -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Card 1: Oceanogràfic -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col transition-all hover:bg-white border border-outline-variant/5">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-6">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img alt="Oceanogràfic Logo" class="w-full h-full object-cover" data-alt="Minimalist architectural detail of the Oceanografic aquarium in Valencia with clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFbGKBJJ502HQT_M0EIOU9djSdzFNjzwVATsKy2pNWunwKRS4e_VAxBLWiXvGGQGCom4lCmVsSJTMTy3sZab7c9fSwt1kkecZKBBjtyrEY4kPh4DWNVX7T424VK8qLrtx9knvFZoF9a9X3_H1ovUOXDp4gJRlTfSt6NmkjrX3nN3ONh5tYU6CfMuVcwc9_y-CCXC-8SyYvacydJr5vD7oPcNqePeHIzoV_lrVLxDz70diImfOwHlijLW4s92owTxPORAIUipvYV7QF"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-2xl font-bold text-on-surface">Oceanogràfic</h3>
+<span class="bg-tertiary-container/30 text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Activa</span>
+</div>
+<p class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Ciudad de las Artes y las Ciencias, Valencia
+                            </p>
+<p class="text-on-surface-variant/80 text-sm mt-2 italic leading-relaxed">"Acuario más grande de Europa"</p>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Especies</p>
+<p class="text-2xl font-black text-primary">2</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Proyectos</p>
+<p class="text-2xl font-black text-primary">1</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Suscriptores</p>
+<p class="text-2xl font-black text-primary">1,081</p>
+</div>
+</div>
+<div class="space-y-3 pt-6 border-t border-outline-variant/10">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+                            contacto@oceanografic.org
+                        </span>
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="call">call</span>
+                            +34 960 470 647
+                        </span>
+</div>
+<div class="flex items-center justify-between">
+<a class="text-primary font-bold text-sm underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all" href="#">oceanografic.org</a>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest text-primary px-4 py-2 rounded-lg text-xs font-bold hover:bg-surface-container transition-colors">Editar</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary-container transition-colors">Ver especies</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Zoo Aquarium Madrid -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col transition-all hover:bg-white border border-outline-variant/5">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-6">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img alt="Zoo Aquarium de Madrid Logo" class="w-full h-full object-cover" data-alt="Wide shot of a modern zoo entrance with lush greenery and clean architecture under a bright sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwhDaJIU7Yw_JDYLanDdrnB3FsnwDI-A3ZFTvvBeHEWCp7p-Tohh2uwIDgmim-JlY6psCz1uvctmbrOtsUy4Ogwr9bbRYoeuuCQFblIiFdf3G-m5xe71oGG0zf6UZsVmztKwZlzk6UPBrdbWgK3c4GaljADACrfZYjLAlsfU8yJ_ZzmFfvPqmGb5HACQHs4u7LyE_RmJUFI_JMElWhBkUHNboHGzAJB5nm52jnzbZOK3S1HmVjvsZ7BbfFCarwnhB3oHSNLCNZMi-g"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-2xl font-bold text-on-surface">Zoo Aquarium de Madrid</h3>
+<span class="bg-tertiary-container/30 text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Activa</span>
+</div>
+<p class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Casa de Campo, Madrid
+                            </p>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Especies</p>
+<p class="text-2xl font-black text-primary">1</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Proyectos</p>
+<p class="text-2xl font-black text-primary">0</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-1">Suscriptores</p>
+<p class="text-2xl font-black text-primary">523</p>
+</div>
+</div>
+<div class="mt-auto flex justify-end gap-2 pt-6 border-t border-outline-variant/10">
+<button class="bg-surface-container-highest text-primary px-4 py-2 rounded-lg text-xs font-bold">Editar</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold">Gestionar</button>
+</div>
+</div>
+<!-- Card 3: Fundación Oceanogràfic -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col transition-all hover:bg-white border border-outline-variant/5">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-6">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img alt="Fundación Oceanogràfic Logo" class="w-full h-full object-cover" data-alt="Dolphin swimming gracefully in crystal clear turquoise water with sunlight rays piercing through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD63LfD_8qcMc9d3uyb2Ye_IKW2kfXcafBNJiRdLl6SN-3XztbhdfGBKD7ccJG8OJZYu3ixfJIBKFEAparftIkHU4DCDlSuooYBp4oiBvrkNnqrqeIH6hI5qitOs-a-VcX0vEyAqzn7BieZhoKqexNvGufQHgomgFCmsiQ4TjsWxoaOFzXYqd5wVG3pedbZijKhgnGOEh9L73bJqnV-4Pma4a4Jyu2O9IufYE59dH1tKblfsz3aFSB1WeaE_PsXRxyzNt4itlC2OAJl"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-2xl font-bold text-on-surface">Fundación Oceanogràfic</h3>
+<span class="bg-tertiary-container/30 text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Activa</span>
+</div>
+<p class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Valencia
+                            </p>
+</div>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="bg-surface-container-high/50 rounded-xl p-4 mb-8">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest mb-2">Proyectos en curso</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-primary">Delfín mular</span>
+<span class="bg-secondary-container/20 text-on-secondary-container px-2 py-0.5 rounded-lg text-[10px] font-bold italic">borrador</span>
+</div>
+</div>
+<div class="mt-auto flex justify-end gap-2 pt-6 border-t border-outline-variant/10">
+<button class="bg-surface-container-highest text-primary px-4 py-2 rounded-lg text-xs font-bold">Editar</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold">Gestionar</button>
+</div>
+</div>
+<!-- Card 4: Empty State / CTA -->
+<button class="border-2 border-dashed border-outline-variant/40 rounded-xl p-8 flex flex-col items-center justify-center group hover:border-primary/50 transition-all hover:bg-surface-container-low/50">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-outline group-hover:text-primary transition-colors" data-icon="add_business">add_business</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface-variant group-hover:text-primary transition-colors">Añadir nueva institución</h3>
+<p class="text-sm text-on-surface-variant/60 mt-1">Registrar un nuevo partner en la red Curator</p>
+</button>
+</div>
+<!-- System Status Bar (Asymmetric Layer) -->
+<div class="mt-16 bg-primary-container text-on-primary-container p-6 rounded-xl flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="hub">hub</span>
+</div>
+<div>
+<p class="font-bold">Sincronización Global Activa</p>
+<p class="text-xs opacity-80">Última actualización: hace 4 minutos • Todos los nodos OK</p>
+</div>
+</div>
+<button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+                Sync Data
+            </button>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on Details, shown on Home/Listing as per rules) -->
+<div class="fixed bottom-10 right-10">
+<button class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</button>
+</div>
+</body></html>

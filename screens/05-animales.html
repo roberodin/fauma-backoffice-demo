@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fauma Backoffice - Animales / Especies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#ffd4bd",
+              "surface-container-low": "#f9f2ec",
+              "on-background": "#1e1b18",
+              "tertiary-fixed": "#ffdbc9",
+              "tertiary-container": "#8c532f",
+              "surface-variant": "#e8e1dc",
+              "on-tertiary-fixed": "#321200",
+              "on-surface": "#1e1b18",
+              "primary-container": "#1a6b72",
+              "inverse-primary": "#8bd2da",
+              "inverse-on-surface": "#f6f0ea",
+              "secondary-container": "#fc8b80",
+              "surface-container": "#f3ede7",
+              "outline-variant": "#bec8c9",
+              "primary": "#005258",
+              "on-error-container": "#93000a",
+              "outline": "#6f797a",
+              "primary-fixed": "#a6eff6",
+              "surface": "#fff8f2",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#a1e9f1",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eee7e1",
+              "on-secondary-fixed": "#410003",
+              "inverse-surface": "#33302c",
+              "error": "#ba1a1a",
+              "background": "#fff8f2",
+              "surface-tint": "#15686f",
+              "on-surface-variant": "#3f484a",
+              "surface-container-highest": "#e8e1dc",
+              "surface-bright": "#fff8f2",
+              "secondary": "#9d413a",
+              "on-tertiary-fixed-variant": "#6c3918",
+              "on-primary-fixed": "#002022",
+              "surface-dim": "#dfd9d3",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#74231f",
+              "on-primary-fixed-variant": "#004f55",
+              "tertiary": "#703c1a",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#7e2a25",
+              "primary-fixed-dim": "#8bd2da",
+              "secondary-fixed-dim": "#ffb4ac",
+              "tertiary-fixed-dim": "#ffb68c",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#005258] dark:bg-slate-950 flex flex-col py-6">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-bold text-white tracking-tighter">Fauma Admin</h1>
+<p class="text-[#A6EFF6]/60 text-xs font-medium uppercase tracking-widest mt-1">The Precision Curator</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#A6EFF6]/70 hover:text-white hover:bg-white/10 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-colors font-inter text-sm tracking-wide uppercase font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white hover:bg-white/10 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-colors font-inter text-sm tracking-wide uppercase font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span>Contenido</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white hover:bg-white/10 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-colors font-inter text-sm tracking-wide uppercase font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="perm_media">perm_media</span>
+<span>Media</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white hover:bg-white/10 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-colors font-inter text-sm tracking-wide uppercase font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Usuarios</span>
+</a>
+<!-- Active State: Animales -->
+<a class="bg-[#1A6B72] text-[#A6EFF6] rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 font-inter text-sm tracking-wide uppercase font-medium scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span>Animales</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white hover:bg-white/10 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-colors font-inter text-sm tracking-wide uppercase font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-primary-fixed">FL</div>
+<div class="overflow-hidden">
+<p class="text-white text-xs font-bold truncate">Fauma Curator</p>
+<p class="text-[#A6EFF6]/50 text-[10px]">Admin Access</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="ml-64 min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-[#FFF8F2] dark:bg-slate-900 shadow-sm shadow-[#1E1B18]/5 z-10">
+<div class="flex items-center justify-between px-8 w-full h-full">
+<div class="flex items-center gap-4 bg-[#F9F2EC] dark:bg-slate-800 px-4 py-2 rounded-xl w-96 border border-outline-variant/10 focus-within:ring-2 focus-within:ring-primary/15 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-on-surface-variant/50" placeholder="Buscar especies, centros o IDs..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-[#EEE7E1] dark:hover:bg-slate-700 rounded-lg transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#EEE7E1] dark:hover:bg-slate-700 rounded-lg transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin User</p>
+<p class="text-[10px] text-on-surface-variant">Master Archive</p>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary/10" data-alt="professional headshot of a middle-aged male curator in a minimalist workspace with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr-l7O9OdfRChJDhej17LyQvnSwHorxY-wKuI6P36hzrmlXTWpBBUVp28yWXnJk3oVIBQQh5Q3rP8EVAVrf87_kc7Rew4ob7npZIn1Mk1h0pcOyL3Pya-At_r4ljmKcV5HogG70ghdTg-Q8XRq-n3vlaWuA4KhllJSFSbyKIXbXd9TLST4WGSCMZLX1-f9YZxyvcLvd2arzs4uPfh9UHEEBGZ_GOmUx0dcgtIvE5p5beS_O5KG0pOhabZ0P461pfieX3ZQxjoUEyA1"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="mt-16 p-8 flex-1">
+<!-- Contextual Header -->
+<div class="flex items-end justify-between mb-10">
+<div>
+<nav class="flex items-center gap-2 text-xs text-on-surface-variant/60 mb-2 uppercase tracking-widest font-bold">
+<span>Archivo</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">Especies</span>
+</nav>
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight">Animales y Especies</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex bg-surface-container-high p-1 rounded-xl">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-primary rounded-lg shadow-sm text-sm font-bold transition-all">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+                            Vista cuadrícula 🏁
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg text-sm font-medium transition-all">
+<span class="material-symbols-outlined text-lg">list</span>
+                            Vista tabla 📋
+                        </button>
+</div>
+<button class="flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-3 rounded-xl font-bold shadow-lg shadow-secondary-container/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                        Nueva especie
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Tortuga Caretta caretta -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden group shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative h-56 overflow-hidden">
+<img alt="Tortuga Caretta caretta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of a loggerhead sea turtle swimming in deep blue ocean water with sunrays piercing the surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0TuLCmL9GQTIlIu6ZPcbYejj5JxapYpgk7vO_rHoXxKhEjaXTLsUTKUqCTE-r5SkaqVM_rZRdpRHmu7JXrMKIEli6FHaD_z1xAb9wy_HknPbz2qRH8jwdWymEpCwPFVneFK_24EienXjQ0lvdlq0WqkuXvqK00u1batRLkXy6EGJlh5XGblPzKD-MimmypggXW_Ejuxh5TIDK4OmGZaiOFwmsT3xJ4Z83hSs8wGxU9iWky7rbQBOP89vJVtGQr4oG-1J2U7rNrac0"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-emerald-500/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Activa</span>
+<span class="bg-primary/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">12 meses</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-xl font-semibold text-on-surface">Tortuga Caretta caretta</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-sm italic text-on-surface-variant mb-4">Caretta caretta</p>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide">Oceanogràfic</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8 p-4 bg-surface-container-low rounded-xl">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Suscriptores</p>
+<p class="text-lg font-bold text-primary">847</p>
+</div>
+<div class="border-l border-outline-variant/30 pl-4">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Contenidos</p>
+<p class="text-lg font-bold text-primary">124</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<a class="text-xs font-bold text-primary hover:underline" href="#">Editar</a>
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Ver contenido <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2: Pingüino Papúa -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden group shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="relative h-56 overflow-hidden">
+<img alt="Pingüino Papúa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A gentoo penguin standing on a snowy rock with a soft blurred icy background in cold blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtd9t4KPhRN40SjivWEddMAHmPGHm_u1g_KcnHL1C0IyRsQF7TNjj5KbNyIrH8zmbxgfLqEk2o38KtHSWrLzBVVl_0hQSEM6T3ijn_NzyDipa3BsAY51rU2MCLEdTddsMXIy5gicudgcgB60WRDXLAMJI7dQ6QYjt03ehBEMby-A8tvXZ3y_kyn630XkMEm-iN8elbhs1b5Otsv8VNKsCxAY-kmnhavGjE4H4cGO1ElfIuTGoQqgAfylh74AEZe8QDnQark13B-iVu"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-emerald-500/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Activa</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-xl font-semibold text-on-surface">Pingüino Papúa</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-sm italic text-on-surface-variant mb-4">Pygoscelis papua</p>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide">Zoo Aquarium Madrid</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8 p-4 bg-surface-container-low rounded-xl">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Suscriptores</p>
+<p class="text-lg font-bold text-primary">523</p>
+</div>
+<div class="border-l border-outline-variant/30 pl-4">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Contenidos</p>
+<p class="text-lg font-bold text-primary">87</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<a class="text-xs font-bold text-primary hover:underline" href="#">Editar</a>
+<a class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Ver contenido <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3: Delfín mular (Draft) -->
+<div class="bg-surface-container-low rounded-[24px] border-2 border-dashed border-outline-variant/50 overflow-hidden group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-56 bg-surface-container-high flex items-center justify-center">
+<div class="text-center group-hover:scale-110 transition-transform duration-300">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mx-auto mb-3 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-outline">add_photo_alternate</span>
+</div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Pendiente de media</p>
+</div>
+<div class="absolute top-4 right-4">
+<span class="bg-amber-500/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Borrador</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-xl font-semibold text-on-surface/50">Delfín mular</h3>
+<button class="text-on-surface-variant/40">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-sm italic text-on-surface-variant/50 mb-4">Tursiops truncatus</p>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-outline text-sm">location_on</span>
+<span class="text-xs font-bold text-on-surface-variant/40 uppercase tracking-wide">Fundación Oceanogràfic</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8 p-4 bg-surface-container/50 rounded-xl grayscale opacity-60">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Suscriptores</p>
+<p class="text-lg font-bold">0</p>
+</div>
+<div class="border-l border-outline-variant/30 pl-4">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Contenidos</p>
+<p class="text-lg font-bold">0</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/10 text-center">
+<a class="text-sm font-bold text-secondary-container flex items-center justify-center gap-2 hover:gap-3 transition-all" href="#">
+                                Completar ficha <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Bottom Stats / Footer -->
+<footer class="mt-12 flex items-center justify-between p-6 bg-surface-container-high rounded-2xl">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<p class="text-sm font-medium"><span class="font-bold">3</span> especies total</p>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<p class="text-sm font-medium"><span class="font-bold">2</span> activas</p>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<p class="text-sm font-medium"><span class="font-bold">1</span> borrador</p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant/50 font-bold uppercase tracking-widest">
+<span>Última actualización: Hoy, 10:42 AM</span>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

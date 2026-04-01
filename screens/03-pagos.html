@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fauma Backoffice - Pagos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#8bd2da",
+                        "on-surface": "#1e1b18",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#a6eff6",
+                        "on-tertiary-container": "#ffd4bd",
+                        "surface-dim": "#dfd9d3",
+                        "on-primary-container": "#a1e9f1",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f6f0ea",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#6c3918",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "surface-tint": "#15686f",
+                        "outline-variant": "#bec8c9",
+                        "surface-variant": "#e8e1dc",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#410003",
+                        "tertiary-container": "#8c532f",
+                        "tertiary-fixed": "#ffdbc9",
+                        "secondary-fixed": "#ffdad6",
+                        "surface-container": "#f3ede7",
+                        "surface-container-low": "#f9f2ec",
+                        "inverse-primary": "#8bd2da",
+                        "secondary-container": "#fc8b80",
+                        "on-error": "#ffffff",
+                        "on-background": "#1e1b18",
+                        "background": "#fff8f2",
+                        "on-primary-fixed-variant": "#004f55",
+                        "secondary": "#9d413a",
+                        "surface-container-high": "#eee7e1",
+                        "on-secondary-container": "#74231f",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "primary": "#005258",
+                        "inverse-surface": "#33302c",
+                        "on-tertiary-fixed": "#321200",
+                        "surface": "#fff8f2",
+                        "on-surface-variant": "#3f484a",
+                        "on-secondary-fixed-variant": "#7e2a25",
+                        "primary-container": "#1a6b72",
+                        "tertiary": "#703c1a",
+                        "surface-container-highest": "#e8e1dc",
+                        "outline": "#6f797a",
+                        "surface-bright": "#fff8f2",
+                        "on-primary-fixed": "#002022"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-layering-no-border { border: none !important; }
+        .flat-no-shadows { box-shadow: none !important; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#005258] dark:bg-teal-950 flex flex-col py-6 gap-2 z-50 shadow-[0px_8px_32px_rgba(30,27,24,0.06)] tonal-layering-no-border">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-white tracking-tighter">Fauma Backoffice</h1>
+<p class="text-xs text-[#A6EFF6]/60 font-medium">The Digital Curator</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 mx-2 hover:bg-[#1A6B72]/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#1A6B72] text-[#A6EFF6] rounded-xl mx-2 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-inter body-md">Pagos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 mx-2 hover:bg-[#1A6B72]/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-inter body-md">Transacciones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 mx-2 hover:bg-[#1A6B72]/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-inter body-md">Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 mx-2 hover:bg-[#1A6B72]/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter body-md">Configuración</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 bg-primary-fixed text-on-primary-fixed rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Nuevo Pago
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-40 bg-[#F9F2EC] dark:bg-stone-800 transition-colors flex justify-between items-center h-20 px-10 flat-no-shadows">
+<div class="flex items-center gap-4">
+<h2 class="font-inter headline-sm font-semibold tracking-tight text-[#1A6B72]">Pagos y Transacciones</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-surface-container-high rounded-xl px-4 py-2 gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-medium">24 Mar 2027 - 31 Mar 2027</span>
+<span class="material-symbols-outlined text-lg" data-icon="expand_more">expand_more</span>
+</div>
+<button class="px-5 py-2 border-2 border-primary text-primary font-bold rounded-xl flex items-center gap-2 hover:bg-primary/5 transition-colors focus:ring-2 focus:ring-[#1A6B72] focus:ring-opacity-20 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Exportar CSV
+                </button>
+<div class="flex items-center gap-4 border-l border-outline-variant/30 pl-6">
+<button class="text-on-surface-variant hover:bg-[#EEE7E1] p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-[#EEE7E1] p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male administrator in a brightly lit modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_6IOQazcD3kTfNSt-2Tok6JF4_UfOh52rDTdtfOkXfU9dVq-2AGohzaNaF_ySrQsbJTQ_SnVyspon58BIe-uEtj7ZoTe9X1fhxo1TV8cMIFmIy6Opl6uUJ1367wrSEKIr_BVDLRntAEr8ncG847UGPwql6KWC3K2JnSYK7q6CPpvtVnzByx-gMAlZwdegrqQRvz1OuInjhbm_Kpt88OlS6TzJBhUKnZ8eoTfCNY2LG2zcLWwh7oRqkEwmdZaoeZ_Lbq_W5qJFuNQc"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Body -->
+<div class="p-10 space-y-8">
+<!-- Alert Section -->
+<div class="bg-secondary-container/20 border-l-4 border-secondary p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3 text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-medium text-sm">1 pago requiere revisión</span>
+</div>
+<button class="text-xs font-bold uppercase tracking-wider text-secondary">Ver detalle</button>
+</div>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_8px_32px_rgba(30,27,24,0.04)] border border-outline-variant/10">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Ingresos hoy</p>
+<h3 class="text-3xl font-extrabold text-primary tracking-tight">€1,245</h3>
+<div class="mt-4 flex items-center gap-1 text-teal-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12% vs ayer</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_8px_32px_rgba(30,27,24,0.04)] border border-outline-variant/10">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Esta semana</p>
+<h3 class="text-3xl font-extrabold text-primary tracking-tight">€8,320</h3>
+<div class="mt-4 flex items-center gap-1 text-teal-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+5.4% vs prev</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_8px_32px_rgba(30,27,24,0.04)] border border-outline-variant/10">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Este mes</p>
+<h3 class="text-3xl font-extrabold text-primary tracking-tight">€42,350</h3>
+<div class="mt-4 flex items-center gap-1 text-teal-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+18.2% vs prev</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_8px_32px_rgba(30,27,24,0.04)] border border-outline-variant/10">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Reembolsos</p>
+<h3 class="text-3xl font-extrabold text-secondary tracking-tight">€180 <span class="text-lg font-medium opacity-60">(3)</span></h3>
+<div class="mt-4 flex items-center gap-1 text-secondary text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<span>Bajo el umbral</span>
+</div>
+</div>
+</section>
+<!-- Filters & Data -->
+<section class="bg-surface-container-low rounded-3xl p-8 space-y-6">
+<!-- Filter Row -->
+<div class="flex flex-wrap items-center gap-4">
+<div class="relative group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter mb-1 ml-1">Estado</label>
+<select class="appearance-none bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 pr-10 text-sm font-medium focus:ring-2 focus:ring-primary min-w-[160px] shadow-sm">
+<option>Todos</option>
+<option>Completado</option>
+<option>Pendiente</option>
+<option>Fallido</option>
+<option>Reembolsado</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 bottom-2.5 pointer-events-none text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="relative group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter mb-1 ml-1">Nivel</label>
+<select class="appearance-none bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 pr-10 text-sm font-medium focus:ring-2 focus:ring-primary min-w-[140px] shadow-sm">
+<option>Todos los Niveles</option>
+<option>Amigo</option>
+<option>Hermano</option>
+<option>Héroe</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 bottom-2.5 pointer-events-none text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="relative group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter mb-1 ml-1">Tipo</label>
+<select class="appearance-none bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 pr-10 text-sm font-medium focus:ring-2 focus:ring-primary min-w-[140px] shadow-sm">
+<option>Todos los Tipos</option>
+<option>Suscripción</option>
+<option>Donación</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 bottom-2.5 pointer-events-none text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+<div class="ml-auto relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-2.5 text-sm w-64 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Buscar por ID, Usuario..." type="text"/>
+</div>
+</div>
+<!-- Custom Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-3">
+<thead>
+<tr class="text-on-surface-variant">
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">ID</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Fecha</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Usuario</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Tipo</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Especie/Proyecto</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Nivel</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Importe</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-center">Estado</th>
+<th class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="text-sm font-medium">
+<!-- Row 1 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-bright transition-all">
+<td class="px-4 py-5 rounded-l-2xl text-primary font-bold">#PAY-2847</td>
+<td class="px-4 py-5 text-on-surface-variant">24 Mar 2027 <span class="block text-[10px] opacity-60">14:32</span></td>
+<td class="px-4 py-5">María García</td>
+<td class="px-4 py-5">Suscripción</td>
+<td class="px-4 py-5 italic text-on-surface-variant">Tortuga Caretta</td>
+<td class="px-4 py-5"><span class="px-2 py-1 bg-surface-container-high rounded text-[11px] font-bold">Hermano</span></td>
+<td class="px-4 py-5 font-bold">€15.00</td>
+<td class="px-4 py-5 text-center">
+<span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-bold">Completado</span>
+</td>
+<td class="px-4 py-5 rounded-r-2xl text-right space-x-2">
+<button class="text-primary hover:underline text-xs font-bold">Ver</button>
+<button class="text-on-surface-variant hover:text-secondary text-xs font-bold">Reembolsar</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-bright transition-all">
+<td class="px-4 py-5 rounded-l-2xl text-primary font-bold">#PAY-2846</td>
+<td class="px-4 py-5 text-on-surface-variant">24 Mar 2027 <span class="block text-[10px] opacity-60">12:15</span></td>
+<td class="px-4 py-5">Carlos Ruiz</td>
+<td class="px-4 py-5">Suscripción</td>
+<td class="px-4 py-5 italic text-on-surface-variant">Pingüino Papúa</td>
+<td class="px-4 py-5"><span class="px-2 py-1 bg-surface-container-high rounded text-[11px] font-bold">Héroe</span></td>
+<td class="px-4 py-5 font-bold">€25.00</td>
+<td class="px-4 py-5 text-center">
+<span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-bold">Completado</span>
+</td>
+<td class="px-4 py-5 rounded-r-2xl text-right space-x-2">
+<button class="text-primary hover:underline text-xs font-bold">Ver</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-bright transition-all">
+<td class="px-4 py-5 rounded-l-2xl text-primary font-bold">#PAY-2845</td>
+<td class="px-4 py-5 text-on-surface-variant">24 Mar 2027 <span class="block text-[10px] opacity-60">10:48</span></td>
+<td class="px-4 py-5">Ana López</td>
+<td class="px-4 py-5">Donación</td>
+<td class="px-4 py-5 italic text-on-surface-variant">Tortuga Caretta</td>
+<td class="px-4 py-5 text-on-surface-variant">—</td>
+<td class="px-4 py-5 font-bold">€10.00</td>
+<td class="px-4 py-5 text-center">
+<span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-bold">Completado</span>
+</td>
+<td class="px-4 py-5 rounded-r-2xl text-right space-x-2">
+<button class="text-primary hover:underline text-xs font-bold">Ver</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-bright transition-all">
+<td class="px-4 py-5 rounded-l-2xl text-primary font-bold">#PAY-2844</td>
+<td class="px-4 py-5 text-on-surface-variant">23 Mar 2027</td>
+<td class="px-4 py-5">Pablo Moreno</td>
+<td class="px-4 py-5">Suscripción</td>
+<td class="px-4 py-5 italic text-on-surface-variant">Proyecto Pintarroja</td>
+<td class="px-4 py-5"><span class="px-2 py-1 bg-surface-container-high rounded text-[11px] font-bold">Amigo</span></td>
+<td class="px-4 py-5 font-bold">€5.00</td>
+<td class="px-4 py-5 text-center">
+<span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-bold">Fallido</span>
+</td>
+<td class="px-4 py-5 rounded-r-2xl text-right space-x-2">
+<button class="text-primary hover:underline text-xs font-bold">Ver</button>
+<button class="text-primary hover:underline text-xs font-bold">Reintentar</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-surface-container-lowest group hover:bg-surface-bright transition-all">
+<td class="px-4 py-5 rounded-l-2xl text-primary font-bold">#PAY-2840</td>
+<td class="px-4 py-5 text-on-surface-variant">23 Mar 2027</td>
+<td class="px-4 py-5">Lucía Fdez</td>
+<td class="px-4 py-5">Suscripción</td>
+<td class="px-4 py-5 italic text-on-surface-variant">Tortuga Caretta</td>
+<td class="px-4 py-5"><span class="px-2 py-1 bg-surface-container-high rounded text-[11px] font-bold">Amigo</span></td>
+<td class="px-4 py-5 font-bold">€5.00</td>
+<td class="px-4 py-5 text-center">
+<span class="bg-stone-200 text-stone-600 px-3 py-1 rounded-full text-xs font-bold">Reembolsado</span>
+</td>
+<td class="px-4 py-5 rounded-r-2xl text-right space-x-2">
+<button class="text-primary hover:underline text-xs font-bold">Ver</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between pt-6">
+<p class="text-on-surface-variant text-sm font-medium">Mostrando 1-20 de 1,247 transacciones</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-highest text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-4 h-10 flex items-center justify-center rounded-xl bg-primary text-on-primary font-bold shadow-sm">1</button>
+<button class="px-4 h-10 flex items-center justify-center rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/10">2</button>
+<button class="px-4 h-10 flex items-center justify-center rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/10">3</button>
+<span class="px-2 py-2">...</span>
+<button class="px-4 h-10 flex items-center justify-center rounded-xl bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/10">63</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-highest text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

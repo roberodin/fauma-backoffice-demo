@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f9f2ec",
+                        "surface-variant": "#e8e1dc",
+                        "on-secondary-fixed": "#410003",
+                        "primary-fixed": "#a6eff6",
+                        "on-primary-fixed-variant": "#004f55",
+                        "inverse-surface": "#33302c",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "on-tertiary-fixed-variant": "#6c3918",
+                        "on-primary-fixed": "#002022",
+                        "on-surface": "#1e1b18",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#15686f",
+                        "tertiary-fixed": "#ffdbc9",
+                        "on-secondary-fixed-variant": "#7e2a25",
+                        "surface-container-high": "#eee7e1",
+                        "outline-variant": "#bec8c9",
+                        "primary": "#005258",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f2",
+                        "background": "#fff8f2",
+                        "on-secondary-container": "#74231f",
+                        "primary-container": "#1a6b72",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#a1e9f1",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdad6",
+                        "inverse-on-surface": "#f6f0ea",
+                        "surface-dim": "#dfd9d3",
+                        "on-tertiary-fixed": "#321200",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#3f484a",
+                        "surface": "#fff8f2",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f3ede7",
+                        "secondary": "#9d413a",
+                        "surface-container-highest": "#e8e1dc",
+                        "inverse-primary": "#8bd2da",
+                        "tertiary-container": "#8c532f",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#703c1a",
+                        "on-tertiary-container": "#ffd4bd",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "primary-fixed-dim": "#8bd2da",
+                        "on-secondary": "#ffffff",
+                        "outline": "#6f797a",
+                        "on-background": "#1e1b18",
+                        "secondary-container": "#fc8b80"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .tonal-transition { transition: background-color 0.3s ease; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-stone-950 flex flex-col py-6 gap-2 shadow-xl z-50">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-black text-white">Animalia Archive</h1>
+<p class="text-[10px] uppercase tracking-wider text-primary-fixed/70">Species Management</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<!-- Active State: Animales (mapped from Collections/Species) -->
+<a class="bg-[#1A6B72] text-[#A6EFF6] rounded-xl flex items-center gap-3 px-4 py-3 mx-2 active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">pest_control_rodent</span>
+<span class="font-inter label-sm uppercase tracking-wider">🐢 Animales</span>
+</a>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-3 mx-2 hover:bg-[#1A6B72]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-inter label-sm uppercase tracking-wider">Collections</span>
+</a>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-3 mx-2 hover:bg-[#1A6B72]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-inter label-sm uppercase tracking-wider">Archives</span>
+</a>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-3 mx-2 hover:bg-[#1A6B72]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter label-sm uppercase tracking-wider">Analytics</span>
+</a>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-3 mx-2 hover:bg-[#1A6B72]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter label-sm uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 py-4 flex flex-col gap-2 border-t border-white/10">
+<button class="bg-[#A6EFF6] text-[#005258] font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                Add Artifact
+            </button>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-2 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-inter label-sm uppercase tracking-wider">Support</span>
+</a>
+<a class="text-[#A6EFF6]/70 flex items-center gap-3 px-4 py-2 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-inter label-sm uppercase tracking-wider">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-10 h-20 w-full bg-[#FFF8F2] sticky top-0 z-40">
+<div>
+<h2 class="text-2xl font-bold tracking-tight text-primary">Alta de Animal / Especie</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+<span class="material-symbols-outlined">help</span>
+</div>
+<img alt="Archivist profile avatar" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="Professional portrait of a male museum curator with glasses in a warmly lit office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-A-dFiyfiYlbASeUxU4nlyv0dKQVSqSInJx8Rb_geQt_JayfctoBbZgpqMkiMyNCudKZ0XqTrZJYhXqh-n8FXAxGTeVB6D7Psbqq1bGeJgD1oMNGGF354vEhU4a0Qc5ZoDotfX_wisvMK_X4_dzEFl_ZXUKeITbcKPih9QQxnUnfYTQ1tWzY0lYQtXpoc98DX0IoMAC1LElaP0hUo6S-6VVdljlDQqFoItP9z23IFacK_IEIIjHh3lHJUdW2HzEfVzZURAASXGqx"/>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-10 pt-8 pb-12">
+<!-- Header Inputs -->
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Nombre común</label>
+<input class="w-full h-14 px-6 rounded-xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Ej: Tortuga Gigante de Aldabra" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Nombre científico</label>
+<input class="w-full h-14 px-6 rounded-xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all italic" placeholder="Ej: Aldabrachelys gigantea" type="text"/>
+</div>
+</div>
+<!-- Form Sections -->
+<div class="space-y-16">
+<!-- 1. Ficha Técnica -->
+<section class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</span>
+<h3 class="text-xl font-bold text-on-surface">Ficha técnica</h3>
+</div>
+<div class="space-y-3">
+<!-- Accordion Expanded -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6 cursor-pointer">
+<h4 class="font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">fingerprint</span>
+                                    Identificación y taxonomía
+                                </h4>
+<span class="material-symbols-outlined">expand_less</span>
+</div>
+<div class="grid grid-cols-3 gap-6 mb-6">
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Familia</label>
+<input class="w-full h-10 px-4 rounded-lg bg-surface-container-low border-none focus:ring-1 focus:ring-primary text-sm" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Género</label>
+<input class="w-full h-10 px-4 rounded-lg bg-surface-container-low border-none focus:ring-1 focus:ring-primary text-sm" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Especie</label>
+<input class="w-full h-10 px-4 rounded-lg bg-surface-container-low border-none focus:ring-1 focus:ring-primary text-sm" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Descripción detallada</label>
+<div class="border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="bg-surface-container-high px-4 py-2 border-b border-outline-variant/20 flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-sm">format_bold</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-sm">format_italic</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-sm">format_list_bulleted</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer text-sm">link</span>
+</div>
+<textarea class="w-full p-4 border-none focus:ring-0 text-sm" placeholder="Escribe aquí la descripción técnica..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<!-- Accordions Collapsed -->
+<div class="space-y-2">
+<div class="bg-surface-container-low rounded-xl px-6 py-4 flex justify-between items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<h4 class="font-semibold text-on-surface-variant">Biometría</h4>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">3/5 CAMPOS</span>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<div class="bg-surface-container-low rounded-xl px-6 py-4 flex justify-between items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<h4 class="font-semibold text-on-surface-variant">Ecología y Hábitat</h4>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded-full font-bold">7/7 CAMPOS</span>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div class="bg-surface-container-low rounded-xl px-6 py-4 flex justify-between items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+<h4 class="font-semibold text-on-surface-variant">Etología y Comportamiento</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Galería -->
+<section class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</span>
+<h3 class="text-xl font-bold text-on-surface">Galería Multimedia</h3>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Photos -->
+<div class="col-span-8 space-y-4">
+<div class="bg-surface-container-low border-2 border-dashed border-outline-variant/40 rounded-xl p-12 text-center group hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="material-symbols-outlined text-5xl text-primary/40 group-hover:text-primary transition-colors">add_photo_alternate</span>
+<p class="mt-4 text-on-surface-variant font-medium">Arrastra tus fotos aquí o <span class="text-primary underline">selecciona archivos</span></p>
+<p class="text-xs text-on-surface-variant/60 mt-2">JPG, PNG o WEBP. Máximo 10MB por archivo.</p>
+</div>
+<div class="grid grid-cols-5 gap-3">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high relative group">
+<img class="w-full h-full object-cover" data-alt="Macro photo of a sea turtle's detailed scale patterns and wise eye" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr3H6K7zJ7b0P4bbaU6iPGfIKwoRauoxB2ZRZ4TTgncOsFdwrEuVqHm4asr1QzCiUb3wzeRNR7T9JOKLIerAvJWkRZCIi0okqvVaD-Zn1bCq320hS8jj6EPCHLn89xR-rxqymWT0aviZXjbJQTVapkOFYsGiKyHzG8YKFOqxnmsx7vLNdJPJCBwAaVlYkMhFZeDdvd-Fb6OoknIPF3Hzzp9qpY_vtbdtpVa59Y4IwZKvYia2fN3fEjvPHeFOg9P5GreMlQt1r-zUmR"/>
+<button class="absolute top-1 right-1 bg-error text-white rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xs">delete</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high relative group">
+<img class="w-full h-full object-cover" data-alt="Lion profile at sunset with deep orange and yellow light hitting its mane" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvnDm8PG5KJzeFNcy8xQQBApzY5l2wR-Z1RFfeUSMIOy-9ofBYFVocqcCnRsV4jVwwoXaeuRJAFs2JVXrjq_g0IVw2YDkZIF_E0BPs3f6Psql338ZLL91yfs_ic4w6yeIgWRCvsFfR2EZTfnmRPzwrM9V-EVc0f8WuEBA2DQrfo-Uf5hXyXQ__AR9a0fAaRn_qqDl5_HpPWVcNfNoXj6SY7hYkS6mUfg8v_lRFjFOb6amvShiSS2-DIZhsV-9VUJPSxZ3CHe_lPLyo"/>
+<button class="absolute top-1 right-1 bg-error text-white rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xs">delete</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg border-2 border-dashed border-outline-variant/30 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+</div>
+<!-- Videos & Live -->
+<div class="col-span-4 space-y-8">
+<div class="space-y-3">
+<label class="text-xs font-bold text-on-surface-variant uppercase">URLs de Vídeos</label>
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-high border-none text-sm" placeholder="https://youtube.com/..." type="text"/>
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-high border-none text-sm" placeholder="https://vimeo.com/..." type="text"/>
+<button class="text-primary text-xs font-bold flex items-center gap-1">+ AÑADIR OTRO</button>
+</div>
+<div class="bg-primary-container/10 p-5 rounded-xl space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-bold text-sm text-primary">Live 24 Horas</label>
+<div class="w-10 h-5 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<input class="w-full h-10 px-4 rounded-lg bg-surface-container-lowest border-none text-sm" placeholder="RTMP Stream URL" type="text"/>
+<div class="flex gap-2">
+<select class="flex-1 h-10 px-3 rounded-lg bg-surface-container-lowest border-none text-xs">
+<option>Lunes a Domingo</option>
+</select>
+<select class="flex-1 h-10 px-3 rounded-lg bg-surface-container-lowest border-none text-xs">
+<option>Todo el día</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Curiosidades -->
+<section class="space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</span>
+<h3 class="text-xl font-bold text-on-surface">Curiosidades y Educación</h3>
+</div>
+<div class="grid grid-cols-2 gap-10">
+<!-- ¿Sabías que? -->
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                                ¿Sabías que...?
+                            </h4>
+<div class="space-y-2">
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-xl">
+<span class="text-xl">🐢</span>
+<p class="text-sm flex-1">Pueden vivir más de 150 años en libertad.</p>
+<span class="material-symbols-outlined text-error/50 cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-xl">
+<span class="text-xl">🥬</span>
+<p class="text-sm flex-1">Consumen hasta 25kg de vegetación al día.</p>
+<span class="material-symbols-outlined text-error/50 cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+<button class="w-full py-3 border-2 border-dashed border-outline-variant/30 rounded-xl text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-colors">
+                                    + AÑADIR DATO CURIOSO
+                                </button>
+</div>
+</div>
+<!-- Eliminando Mitos -->
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology_alt</span>
+                                Eliminando mitos
+                            </h4>
+<div class="bg-surface-container-low p-4 rounded-xl space-y-4">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-error uppercase">Mito</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg text-sm p-3" rows="2">Son animales lentos y torpes que no pueden defenderse.</textarea>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-primary uppercase">Realidad</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg text-sm p-3" rows="2">Tienen una fuerza inmensa en sus patas y un caparazón casi impenetrable.</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Life Cycle Bento Grid -->
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase">Ciclo de vida anual</h4>
+<div class="grid grid-cols-6 gap-3">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10 text-center">
+<span class="text-xs font-bold text-primary">ENE</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-outline-variant">image</span>
+</div>
+<p class="mt-2 text-[10px] leading-tight">Hibernación profunda</p>
+</div>
+<div class="bg-primary-container/20 p-3 rounded-xl border border-primary/20 text-center">
+<span class="text-xs font-bold text-primary">FEB</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Macro of reptile skin texture and emerging pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5fqeV4d37IffMCT-FiKS5wEWCrQD5PvHsggMyfop2eBVo1ALaSVL3kwSneSqaLbNzv2e7JIq0yxHHAK8XOuN8YuOAVwSLb0XmS1cqbaaq8ovue_24WauSBUVE0tYbrmTwL-G-R1QNrKV8atCiQW5TRpD1FQ1R9Izzn4sFbI6Dsks1Z_rivz3DfFyxD9MwFdJw4oNblpZ2s4sHrIv27YhLyyvIQJrQ09CTOtDzs6IfSqASCSeudPPaPX_hd73oc_ErWNaGWyu4YYo"/>
+</div>
+<p class="mt-2 text-[10px] leading-tight font-bold">Despertar</p>
+</div>
+<!-- Repeated for layout visualization -->
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10 text-center opacity-60">
+<span class="text-xs font-bold text-on-surface-variant">MAR</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center"></div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10 text-center opacity-60">
+<span class="text-xs font-bold text-on-surface-variant">ABR</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center"></div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10 text-center opacity-60">
+<span class="text-xs font-bold text-on-surface-variant">MAY</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center"></div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10 text-center opacity-60">
+<span class="text-xs font-bold text-on-surface-variant">JUN</span>
+<div class="mt-2 aspect-square rounded-lg bg-surface-container-high flex items-center justify-center"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Diario de Salud -->
+<section class="space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</span>
+<h3 class="text-xl font-bold text-on-surface">Diario de Salud y Veterinaria</h3>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-5 space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 space-y-6">
+<div class="space-y-4">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">Veterinario Responsable</label>
+<select class="w-full h-11 px-4 rounded-lg bg-surface-container-high border-none text-sm">
+<option>Dr. Alberto Gómez (Fauna Exótica)</option>
+<option>Dra. Elena Ruiz (Reptiles)</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">Frecuencia de revisión</label>
+<select class="w-full h-11 px-4 rounded-lg bg-surface-container-high border-none text-sm">
+<option>Mensual</option>
+<option>Trimestral</option>
+</select>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-xs font-bold text-on-surface-variant uppercase border-b border-outline-variant/20 pb-2">Últimas actualizaciones</p>
+<div class="flex gap-3 items-start">
+<div class="w-2 h-2 mt-1.5 rounded-full bg-tertiary"></div>
+<div>
+<p class="text-xs font-bold">12 Oct 2023</p>
+<p class="text-[10px] text-on-surface-variant">Revisión de caparazón. Todo OK.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="w-2 h-2 mt-1.5 rounded-full bg-primary"></div>
+<div>
+<p class="text-xs font-bold">05 Sep 2023</p>
+<p class="text-[10px] text-on-surface-variant">Desparasitación anual completada.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-7">
+<div class="bg-surface-container-low rounded-2xl p-2 flex gap-1 mb-4">
+<button class="flex-1 py-2 bg-surface-container-lowest text-primary font-bold text-xs rounded-xl shadow-sm">Enfermedades comunes</button>
+<button class="flex-1 py-2 text-on-surface-variant font-bold text-xs rounded-xl hover:bg-surface-container-high">Protocolos de tratamiento</button>
+<button class="flex-1 py-2 text-on-surface-variant font-bold text-xs rounded-xl hover:bg-surface-container-high">Vacunación</button>
+</div>
+<div class="space-y-3 h-48 overflow-y-auto no-scrollbar">
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10 flex justify-between items-center">
+<div>
+<h5 class="text-sm font-bold">Infecciones respiratorias</h5>
+<p class="text-xs text-on-surface-variant">Detección por mucosidad excesiva y letargo.</p>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10 flex justify-between items-center">
+<div>
+<h5 class="text-sm font-bold">Piridismo (Caparazón en pirámide)</h5>
+<p class="text-xs text-on-surface-variant">Causado por humedad incorrecta o dieta.</p>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Acompáñanos -->
+<section class="space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">5</span>
+<h3 class="text-xl font-bold text-on-surface">Día a día del animal</h3>
+</div>
+<div class="bg-primary-container/5 rounded-3xl p-8 border border-primary-container/10">
+<div class="flex items-center justify-between mb-8">
+<div class="space-y-1">
+<h4 class="font-bold text-lg">Contenido Diario Público</h4>
+<p class="text-sm text-on-surface-variant">Permite que los usuarios vean actualizaciones diarias del animal.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-on-surface-variant">HABILITAR CONTENIDO</span>
+<div class="w-14 h-7 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-5 h-5 bg-white rounded-full absolute right-1"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">Tipo de contenido</label>
+<select class="w-full h-11 px-4 rounded-xl bg-surface-container-lowest border-none text-sm">
+<option>Vídeos cortos (Stories)</option>
+<option>Galería fotográfica</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">Frecuencia de post</label>
+<select class="w-full h-11 px-4 rounded-xl bg-surface-container-lowest border-none text-sm">
+<option>Diaria (L-V)</option>
+<option>Semanal</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase">Nivel mínimo de acceso</label>
+<select class="w-full h-11 px-4 rounded-xl bg-surface-container-lowest border-none text-sm">
+<option>Explorador (Gratuito)</option>
+<option>Curador (Premium)</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Sticky Bottom Bar -->
+<footer class="fixed bottom-0 left-64 right-0 h-20 bg-white/80 backdrop-blur-lg px-10 flex items-center justify-between border-t border-outline-variant/10 z-50">
+<button class="text-on-surface-variant font-bold text-sm hover:underline">Cancelar</button>
+<div class="flex items-center gap-4">
+<button class="px-8 py-3 rounded-xl border-2 border-primary text-primary font-bold text-sm hover:bg-primary/5 transition-colors">Guardar borrador</button>
+<button class="px-10 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-black text-sm shadow-lg shadow-secondary-container/20 hover:scale-[1.02] active:scale-95 transition-all">PUBLICAR</button>
+</div>
+</footer>
+</main>
+</body></html>

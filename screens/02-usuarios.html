@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#8c532f",
+              "surface-dim": "#dfd9d3",
+              "surface-tint": "#15686f",
+              "on-tertiary-fixed-variant": "#6c3918",
+              "primary-fixed": "#a6eff6",
+              "secondary-fixed": "#ffdad6",
+              "on-surface-variant": "#3f484a",
+              "on-tertiary-container": "#ffd4bd",
+              "surface-container-highest": "#e8e1dc",
+              "surface-container-low": "#f9f2ec",
+              "inverse-primary": "#8bd2da",
+              "background": "#fff8f2",
+              "on-tertiary": "#ffffff",
+              "primary": "#005258",
+              "surface": "#fff8f2",
+              "on-secondary-fixed-variant": "#7e2a25",
+              "error": "#ba1a1a",
+              "outline": "#6f797a",
+              "surface-container-high": "#eee7e1",
+              "on-background": "#1e1b18",
+              "surface-variant": "#e8e1dc",
+              "primary-container": "#1a6b72",
+              "on-primary-fixed": "#002022",
+              "error-container": "#ffdad6",
+              "surface-container": "#f3ede7",
+              "on-surface": "#1e1b18",
+              "inverse-on-surface": "#f6f0ea",
+              "on-error": "#ffffff",
+              "surface-bright": "#fff8f2",
+              "tertiary-fixed": "#ffdbc9",
+              "primary-fixed-dim": "#8bd2da",
+              "outline-variant": "#bec8c9",
+              "on-secondary": "#ffffff",
+              "secondary": "#9d413a",
+              "on-secondary-container": "#74231f",
+              "secondary-fixed-dim": "#ffb4ac",
+              "on-secondary-fixed": "#410003",
+              "inverse-surface": "#33302c",
+              "on-primary-container": "#a1e9f1",
+              "tertiary-fixed-dim": "#ffb68c",
+              "secondary-container": "#fc8b80",
+              "on-tertiary-fixed": "#321200",
+              "tertiary": "#703c1a",
+              "on-primary-fixed-variant": "#004f55",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-border { border: none !important; }
+        .tonal-layering { border: none !important; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#005258] dark:bg-[#002a2d] shadow-2xl shadow-[#1E1B18]/10 font-['Inter'] antialiased text-sm tracking-tight z-50">
+<div class="flex flex-col h-full py-6">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#1A6B72] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#A6EFF6]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-white tracking-tighter">Fauma</h1>
+<p class="text-[10px] uppercase tracking-widest text-[#A6EFF6]/60 font-bold">Backoffice Curator</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="bg-[#1A6B72] text-[#A6EFF6] rounded-xl mx-2 px-4 py-3 flex items-center gap-3 font-semibold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Usuarios</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventario</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reportes</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="px-4 mb-6">
+<button class="w-full py-3 bg-[#A6EFF6] text-[#005258] font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-white transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                    Nuevo Registro
+                </button>
+</div>
+<div class="pt-4 border-t border-[#1A6B72]/30 space-y-1">
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-colors hover:bg-[#1A6B72]/50 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#FFF8F2] dark:bg-[#1E1B18] transition-colors">
+<div class="flex justify-between items-center px-8 h-full ml-0">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="text-lg font-bold text-[#005258] dark:text-white whitespace-nowrap">Gestión de Usuarios</h2>
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-2.5 pl-12 pr-4 text-sm focus:ring-2 focus:ring-[#1A6B72] focus:bg-surface-container-lowest transition-all" placeholder="Buscar por nombre o email..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-[#EEE7E1] dark:hover:bg-[#3F484A] rounded-lg transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#EEE7E1] dark:hover:bg-[#3F484A] rounded-lg transition-all">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="px-5 py-2.5 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                    Descargar Reporte
+                </button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a curator in a minimalist art gallery setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs6n0UpAYucUFUhZsR1zrTrsQ4NMvfIJiMwMVgc-Ws6fTvaHUHxjEWhd1HBNlPWyVVvktQei2g_La4EpDO-azOrFeAQlGN8PjCwImgMX8FtEagZir65cOgHydFPd4L9mRpdD_VeDi3Hd9MB6Di8lWPuEEDl1qE49QoN6v6OfIxjHtjUdRcjOhDfwyRuzL8TZGWyq9uTuaWfvbzYp1Vvhfq9VQU3pBj8Zdz9HuJjtdBLD-XugPTtZEM5GsZxN5PwpuIwZPphEz4mAN1"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12">
+<!-- Action Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div class="space-y-1">
+<h3 class="text-4xl font-extrabold tracking-tight text-on-surface">Usuarios</h3>
+<p class="text-on-surface-variant font-medium">Gestiona y analiza la base de datos de tu archivo digital.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex bg-surface-container rounded-xl p-1">
+<select class="bg-transparent border-none text-sm font-semibold text-on-surface-variant focus:ring-0 cursor-pointer px-4 py-2">
+<option>Nivel: Todos</option>
+<option>Hermano</option>
+<option>Héroe</option>
+<option>Amigo</option>
+</select>
+<div class="w-[1px] bg-outline-variant/30 my-2"></div>
+<select class="bg-transparent border-none text-sm font-semibold text-on-surface-variant focus:ring-0 cursor-pointer px-4 py-2">
+<option>Estado: Todos</option>
+<option>Activo</option>
+<option>Inactivo</option>
+</select>
+</div>
+<button class="bg-secondary text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-xl shadow-secondary/20">
+<span class="material-symbols-outlined">person_add</span>
+                    + Nuevo usuario
+                </button>
+</div>
+</div>
+<!-- Stats Strip (Asymmetric Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10">
+<div class="md:col-span-4 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/20 rounded-xl text-primary-container">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded-full">+12% vs mes pasado</span>
+</div>
+<div>
+<h4 class="text-5xl font-black tracking-tighter text-on-surface">2,847</h4>
+<p class="text-on-surface-variant font-bold uppercase text-[11px] tracking-widest mt-1">usuarios totales</p>
+</div>
+</div>
+<div class="md:col-span-5 bg-primary-container text-on-primary-container p-8 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+</div>
+<div class="flex justify-between items-start mb-4 z-10">
+<div class="p-3 bg-white/10 rounded-xl">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<span class="text-xs font-bold text-[#A6EFF6] uppercase tracking-widest">Suscripción Premium</span>
+</div>
+<div class="z-10">
+<h4 class="text-5xl font-black tracking-tighter">1,923</h4>
+<p class="text-on-primary-container/80 font-bold uppercase text-[11px] tracking-widest mt-1">con suscripción activa</p>
+</div>
+</div>
+<div class="md:col-span-3 bg-tertiary-container text-on-tertiary-container p-8 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-white/10 rounded-xl">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+</div>
+<div>
+<h4 class="text-5xl font-black tracking-tighter">89%</h4>
+<p class="text-on-tertiary-container/80 font-bold uppercase text-[11px] tracking-widest mt-1">tasa de retención</p>
+</div>
+</div>
+</div>
+<!-- User Table Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl shadow-on-surface/5">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high border-b border-outline-variant/10">
+<tr>
+<th class="py-5 px-6"><input class="rounded text-primary focus:ring-primary-container w-4 h-4 border-outline-variant" type="checkbox"/></th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Usuario</th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Nivel</th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Especies / Proyectos</th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Última actividad</th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Ingresos</th>
+<th class="py-5 px-4 text-[11px] font-black uppercase tracking-widest text-on-surface-variant">Estado</th>
+<th class="py-5 px-6 text-right"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="py-5 px-6"><input checked="" class="rounded text-primary focus:ring-primary-container w-4 h-4 border-outline-variant" type="checkbox"/></td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="María García" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with a kind expression, professional studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_2IdTvlfWphpagEfT0Rf1Fnjlv9NDuz8be-q4wr4yV6p4W8hBD0X00JETg7aB7NXHATwJlZSdAs4vrfL80UFJfwaNOZ1OUnES5MehCi_KSiPuoX462wr4RE-Yf5qZDVBOYoydYiEp3dAafimZCj6vqZa35eTAa2BiD4ah4AtDIfqBy0o1R1WFUmZ0XwTPZqESDossG0B_ZW5y1cO1P2wo9J7n6aMSUZJZnyaDcVofw3E2LWw00vJivllSz0B85mNcJOC-Zf3ka5_t"/>
+</div>
+<div>
+<div class="font-bold text-on-surface">María García</div>
+<div class="text-xs text-on-surface-variant">m.garcia@example.com</div>
+</div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="bg-primary/10 text-primary text-[10px] font-black uppercase px-2.5 py-1 rounded-full">Hermano</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex gap-1.5 items-center">
+<span class="flex items-center gap-1 text-xs font-semibold text-on-surface"><span class="material-symbols-outlined text-[14px]">eco</span> 2</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="flex items-center gap-1 text-xs font-semibold text-on-surface"><span class="material-symbols-outlined text-[14px]">folder</span> 1</span>
+</div>
+</td>
+<td class="py-5 px-4 text-xs font-medium text-on-surface-variant">Hace 2h</td>
+<td class="py-5 px-4 font-bold text-on-surface">€234</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    Activo
+                                </div>
+</td>
+<td class="py-5 px-6 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="py-5 px-6"><input checked="" class="rounded text-primary focus:ring-primary-container w-4 h-4 border-outline-variant" type="checkbox"/></td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Carlos Ruiz" class="w-full h-full object-cover" data-alt="portrait of a young man with glasses, professional business attire, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnvG8UPME5N4xVs9X9r_Isw7mJEOTLIdfwBq195CFIk-aRVBVLOishzK7eShhAHT-L_EG25tkNq8wIoBOWT4MFt6PPNZc1Ad1p-G-baFognx2P-TWa8x8_lMz7OfVSqykytU674ajjjnv4kVAYtWh_ACSR9tQGaIZmlR1lGoO6TIS_9CfM-8xRKFw3V8CkDsPRcYOHv2Gyp9k-wi8e5DR5etfoKRyFCvju84hsEAki4wIfun8iUElMmWRhyhB9pe48MBViO8WI7jeh"/>
+</div>
+<div>
+<div class="font-bold text-on-surface">Carlos Ruiz</div>
+<div class="text-xs text-on-surface-variant">carlos.ruiz@arch.io</div>
+</div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="bg-secondary/10 text-secondary text-[10px] font-black uppercase px-2.5 py-1 rounded-full">Héroe</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex gap-1.5 items-center">
+<span class="flex items-center gap-1 text-xs font-semibold text-on-surface"><span class="material-symbols-outlined text-[14px]">eco</span> 1</span>
+</div>
+</td>
+<td class="py-5 px-4 text-xs font-medium text-on-surface-variant">Hace 1 día</td>
+<td class="py-5 px-4 font-bold text-on-surface">€450</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    Activo
+                                </div>
+</td>
+<td class="py-5 px-6 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="py-5 px-6"><input class="rounded text-primary focus:ring-primary-container w-4 h-4 border-outline-variant" type="checkbox"/></td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Lucía Fernández" class="w-full h-full object-cover" data-alt="side profile of a woman in artistic studio lighting, elegant and focused look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoTUNDoxz85ltn8Yy3f__vNhSFdztYt2nYZNUZp45l85VsRClXmh6fTe-m_pVSsYl5jIh8WtQfVBs2IDFNrqMOdHOUxBVWzCcVpTs2hO5r3J6nYvq7CwAoED2xo2fpguwGsoXvMFSrGq1hAE5mQoFcO1Ah9ADsv8c8lrQudzt2Tc5YYko9_dPMaOO9nwoANytd5QxSLyumTdH4h2G8YHGlCmY8nDss2bx5Ex8ZKb6zJsHgB67IETSox6-LsX9t0FIEwCX-CVCiY1J6"/>
+</div>
+<div>
+<div class="font-bold text-on-surface">Lucía Fernández</div>
+<div class="text-xs text-on-surface-variant">lu.fer@creative.es</div>
+</div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] font-black uppercase px-2.5 py-1 rounded-full">Amigo</span>
+</td>
+<td class="py-5 px-4">
+<div class="flex gap-1.5 items-center">
+<span class="flex items-center gap-1 text-xs font-semibold text-on-surface"><span class="material-symbols-outlined text-[14px]">eco</span> 1</span>
+</div>
+</td>
+<td class="py-5 px-4 text-xs font-medium text-on-surface-variant">Hace 1 semana</td>
+<td class="py-5 px-4 font-bold text-on-surface">€30</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-1.5 text-xs font-bold text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    Activo
+                                </div>
+</td>
+<td class="py-5 px-6 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group opacity-70">
+<td class="py-5 px-6"><input class="rounded text-primary focus:ring-primary-container w-4 h-4 border-outline-variant" type="checkbox"/></td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high grayscale">
+<img alt="Pablo Moreno" class="w-full h-full object-cover" data-alt="candid portrait of a man, natural outdoor soft daylight, muted tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXIDijJVAy1cYtUAeamjMIa4SGsqMb7sTuIUeLfHxCZR3PgyxdwJd17OlrVEB4lW9kmipA0r-57K0j6cO7XzeHMdybJcNIm5a61Vly6ddVBGvBBrdO_moqf9s4gu8_FIeO3KYUCjRUJ19bDW8ZURP-f79F0rl9_kbf56oy4twIgqK8vp18Ae55aiC1P-vcsX8h80nE_LSs-C7OZB8ZmptTnSpcn5I5b-DVWM2K6RADirTFl0-Qvb8VtZdAvHRwH98NtqAk4hmuLeO6"/>
+</div>
+<div>
+<div class="font-bold text-on-surface">Pablo Moreno</div>
+<div class="text-xs text-on-surface-variant">pmoreno@oldmail.com</div>
+</div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-[10px] font-black uppercase text-outline">—</span>
+</td>
+<td class="py-5 px-4 text-outline">—</td>
+<td class="py-5 px-4 text-xs font-medium text-on-surface-variant">Hace 2 meses</td>
+<td class="py-5 px-4 font-bold text-on-surface">€0</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant/60">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+                                    Inactivo
+                                </div>
+</td>
+<td class="py-5 px-6 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Pagination & Bulk -->
+<div class="bg-surface-container-high/50 px-8 py-5 flex items-center justify-between border-t border-outline-variant/10">
+<div class="flex items-center gap-6">
+<p class="text-sm font-semibold text-on-surface-variant">Mostrando <span class="text-on-surface">1-20</span> de <span class="text-on-surface">2,847</span></p>
+<div class="flex items-center bg-surface-container-lowest rounded-full px-4 py-2 gap-4 shadow-sm">
+<span class="text-xs font-bold text-primary">2 seleccionados</span>
+<div class="w-[1px] h-4 bg-outline-variant/30"></div>
+<button class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                            Enviar email
+                        </button>
+<button class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+                            Exportar CSV
+                        </button>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant border border-outline-variant/10 hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold">1</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant border border-outline-variant/10 hover:border-primary transition-all">2</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant border border-outline-variant/10 hover:border-primary transition-all">3</button>
+<div class="flex items-center px-2 text-on-surface-variant">...</div>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant border border-outline-variant/10 hover:border-primary transition-all">143</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant border border-outline-variant/10 hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Quick Stats -->
+<div class="fixed bottom-8 right-8 z-40">
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-4 rounded-xl border border-outline-variant/10 shadow-2xl shadow-primary/10 flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="active" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="minimalist user avatar, clean graphic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsNWRPRGIJ3yAPrrD9FD-DMqZSOdBER7mAlmQ7eQchiLmraO71X6l7pDgN3-HwFKc_-ZBZ7zx3mGNsbRXdGbvKjRhPEuz2Jp74KCCNTUdBQXc_lYJDQkEf-c_Dr59StepnapxvkfZEq78aCO09LXGSTDM1zwC0sUr_CCLAmb1ruS1l65j7pSxdRKC3h-sA5g8VNTlLXrQAx3mI6daAe7JH2SWCfmsZ_OTNhLeUbHzAGFtcgzECHrdoSlrAA-dYir5ErpY5dCXOihku"/>
+<img alt="active" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="minimalist user avatar, clean graphic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBewXIhK9U1U4bB-FpfqZ0BVzqE6WMqqTKF9MNt6-9EQFhYFI1K_QVz3nwYLuhxDI1OttHhCgJOF98oaZ_3E5Bo6-DzoA4BM7LUFTfsWTn7YJ5ifonahPgBqdcuzb4wnS64WkuH3wCQtTv1I88tJmyB0__mTmFa-72OsWfO0lKasVXOkxx6S_8E_Av988_HuLRDKyAcybAjUnA8_AYa2-xX_q4S7-7JVnQzZ5NTOCW1jtsACWh_QSvPYnOPmLPUO0B1GxQObAyJFV7J"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary-container text-[10px] flex items-center justify-center font-bold text-white">+14</div>
+</div>
+<div class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
+                Usuarios online <span class="text-primary ml-1">viviendo ahora</span>
+</div>
+</div>
+</div>
+</body></html>

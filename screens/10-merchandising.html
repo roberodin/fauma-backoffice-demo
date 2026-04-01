@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#a6eff6",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1a6b72",
+                        "primary": "#005258",
+                        "surface-container": "#f3ede7",
+                        "on-error-container": "#93000a",
+                        "surface": "#fff8f2",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e8e1dc",
+                        "on-surface-variant": "#3f484a",
+                        "background": "#fff8f2",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "on-tertiary-container": "#ffd4bd",
+                        "inverse-primary": "#8bd2da",
+                        "tertiary-fixed": "#ffdbc9",
+                        "on-primary-fixed-variant": "#004f55",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#6c3918",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f6f0ea",
+                        "on-surface": "#1e1b18",
+                        "primary-fixed-dim": "#8bd2da",
+                        "on-background": "#1e1b18",
+                        "outline": "#6f797a",
+                        "on-secondary-fixed": "#410003",
+                        "secondary-container": "#fc8b80",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dfd9d3",
+                        "on-secondary-container": "#74231f",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "secondary": "#9d413a",
+                        "on-primary-container": "#a1e9f1",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#321200",
+                        "surface-variant": "#e8e1dc",
+                        "surface-bright": "#fff8f2",
+                        "tertiary-container": "#8c532f",
+                        "surface-tint": "#15686f",
+                        "surface-container-high": "#eee7e1",
+                        "on-secondary-fixed-variant": "#7e2a25",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#33302c",
+                        "tertiary": "#703c1a",
+                        "surface-container-low": "#f9f2ec",
+                        "outline-variant": "#bec8c9",
+                        "on-primary-fixed": "#002022"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff8f2;
+            color: #1e1b18;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#005258] dark:bg-[#002d31] font-sans Inter tracking-tight headline-sm antialiased z-50">
+<div class="flex flex-col h-full p-6 space-y-8">
+<!-- Brand Identity -->
+<div class="flex items-center space-x-3 mb-4 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center shadow-lg shadow-black/20">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-white tracking-[-0.02em]">Fauma Backoffice</h1>
+<p class="text-[10px] text-primary-fixed/60 uppercase tracking-widest font-semibold">The Digital Curator</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-2">
+<a class="flex items-center px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 hover:bg-[#1A6B72]/50 rounded-xl group transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 hover:bg-[#1A6B72]/50 rounded-xl group transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="inventory_2">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<!-- Active Tab: Merchandising -->
+<a class="flex items-center px-4 py-3 bg-[#1A6B72] text-[#A6EFF6] rounded-xl font-semibold scale-95 active:scale-90 transition-transform shadow-inner" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="layers" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="text-sm">Merchandising</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 hover:bg-[#1A6B72]/50 rounded-xl group transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 hover:bg-[#1A6B72]/50 rounded-xl group transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="bar_chart">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<!-- Footer Tabs -->
+<div class="pt-6 mt-6 border-t border-primary-container/30 space-y-2">
+<a class="flex items-center px-4 py-2 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center px-4 py-2 text-[#A6EFF6]/70 hover:text-white transition-colors duration-200 rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="help_outline">help_outline</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-[#F9F2EC] dark:bg-[#2A2724] flex justify-between items-center px-10 z-40 transition-colors">
+<div class="flex items-center space-x-8">
+<span class="text-lg font-bold text-[#005258] dark:text-[#A6EFF6]">Merchandising</span>
+<nav class="hidden md:flex space-x-6 text-[#3F484A] dark:text-[#BEC8C9] font-sans Inter body-md font-medium">
+<a class="hover:text-[#1A6B72] dark:hover:text-[#A6EFF6] transition-colors" href="#">Collections</a>
+<a class="text-[#005258] border-b-2 border-[#005258] pb-1" href="#">Product Gallery</a>
+<a class="hover:text-[#1A6B72] dark:hover:text-[#A6EFF6] transition-colors" href="#">Lookbooks</a>
+</nav>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-xl text-sm w-64 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search products..." type="text"/>
+</div>
+<div class="flex items-center space-x-3 border-l border-outline-variant/30 pl-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">apps</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Administrator Profile" data-alt="close-up portrait of a professional man in a minimal office setting with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP4WlkXm3hbQ2jby36J6BWKkGqnCMjJHOjdv177QayeyKXJkIhQGb_EOC4VrUsDTMZ6Ogvyvt1bSpxipdGEfhooxv1OJcFfBqmmb5bMhTlor8INpmjNKomvzQGpjRUf5RzwoixyG61LMHz_yvKN4Qi_G8WDEqg6ZNBsYuEGVwQCUfpnibF3YuL9WZZ8dQeJqKv6I3sNPtZibdhIMWAyXAvT8SjygjxvMWZE3Pi-4wqZhzw1BxwE8UeIYaEI9JN49_qoZcHXYSmGVVP"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 p-10 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto space-y-10">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Catálogo de Merchandising</h2>
+<p class="text-on-surface-variant body-md font-medium">Gestión de inventario y curaduría de la tienda oficial.</p>
+</div>
+<button class="px-6 py-3 bg-gradient-to-br from-secondary to-on-secondary-fixed-variant text-white rounded-xl font-bold flex items-center space-x-2 shadow-lg shadow-secondary/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span>Nuevo producto</span>
+</button>
+</div>
+<!-- Stats Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">inventory</span>
+</div>
+<div>
+<p class="text-label-sm font-bold uppercase tracking-wider text-on-surface-variant">Productos Activos</p>
+<p class="text-2xl font-extrabold text-on-surface">8 productos</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+<div>
+<p class="text-label-sm font-bold uppercase tracking-wider text-on-surface-variant">Stock Total</p>
+<p class="text-2xl font-extrabold text-on-surface">234 unidades</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+</div>
+<div>
+<p class="text-label-sm font-bold uppercase tracking-wider text-on-surface-variant">Pendientes</p>
+<p class="text-2xl font-extrabold text-on-surface">47 pedidos</p>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Card 1: Turtle -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-black/5 transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Peluche Tortuga Caretta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="high-quality studio photograph of a soft plush green sea turtle toy on a warm cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb9seTgsnrb1IKS6ZwqEmji0jrm0nKp39TxeprwnkNh9pPlnrtHceWAaOhyY5W1t3tGCL674P5vCcBXt15VTwyq31eHiIdWAGyLtMk2FxSoQP6Upn6GOjNRI9Hi41yboqsRq0Ahbz4hIfVLV8-nRqurbW6ir5bT6uRYs3EDNdPnwp9pGepEB4f2-YSvLOfGAakt-cBaUzAgx88TFJ1-P8mpggerWCMEtspL6uTvIzC1qKYnumj8VLRndh-LlKYazd1AVGdsqnHzGrY"/>
+<div class="absolute top-4 left-4 flex flex-col space-y-2">
+<span class="px-3 py-1 bg-primary text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Hermano</span>
+<span class="px-3 py-1 bg-primary-container text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Héroe</span>
+</div>
+<div class="absolute bottom-4 right-4">
+<span class="px-3 py-1 bg-tertiary text-white text-[10px] font-bold rounded-full">Activo</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-on-surface">Peluche Tortuga Caretta</h3>
+<p class="text-xs text-on-surface-variant italic">Caretta caretta</p>
+</div>
+<span class="text-lg font-bold text-primary">€8.50</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>Stock: 87 unidades</span>
+<span class="text-primary">87%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[87%] rounded-full"></div>
+</div>
+</div>
+<div class="flex space-x-2 pt-2">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg text-sm font-bold hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="flex-1 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary-container transition-colors">Ver pedidos</button>
+</div>
+</div>
+</div>
+<!-- Card 2: T-shirt -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-black/5 transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Camiseta Tortuga Ed. Limitada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="organic cotton white t-shirt with a minimalist sea turtle graphic print, folded neatly on a wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbrQvGHM93uRnb8vsRndETgQip7t-UL-MGgOKpZm4Pk2IM88oNbNCmM9Kg1TeFFOB8uQKYp7nQlYIqavdX2zgSWJnNqqWobrr9nvaQaXJ5bsA2RZBORTk9T3vpEo6_bJwBat_1wsmBurXHud0iIbWWN-tu83CNAfj6WbWWBpdE6nttsGGV--l0MwnOHBuVv-VcKAH13yZKMPhTLeA8LeVzhLDZbaWplGRafLSW6VDTJfAArSPsBfCLFpNgmFhA1MgxbuOhIlgxqo3"/>
+<div class="absolute top-4 left-4 flex flex-col space-y-2">
+<span class="px-3 py-1 bg-primary-container text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Héroe</span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 bg-secondary text-white text-[10px] font-bold uppercase tracking-widest rounded-full animate-pulse shadow-lg shadow-secondary/30">Low Stock</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-on-surface">Camiseta Ed. Limitada</h3>
+<p class="text-xs text-on-surface-variant italic">Edición 2024</p>
+</div>
+<span class="text-lg font-bold text-primary">€18.00</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-semibold text-secondary">
+<span>Stock: 23 unidades</span>
+<span>23%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[23%] rounded-full"></div>
+</div>
+</div>
+<div class="flex space-x-2 pt-2">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg text-sm font-bold hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="flex-1 py-2 bg-secondary text-white rounded-lg text-sm font-bold hover:bg-secondary-fixed-variant transition-colors shadow-md shadow-secondary/20">Reponer ya</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Penguin -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-black/5 transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Peluche Pingüino Papúa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="cute stuffed animal penguin toy with soft black and white fur on a clean minimal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_emce9MdQimYSe11OT4ct5IaWEboOTEVRdFQ_Ym0KYAQ4P0J5r71n8mTRjvINhZrGcp3-ocpRKIsRE6J8VJNR6B-jH8Ii9cBy1w5ll5cMVk3wAo_MW2uTbwANJaRmQ5H4uLqP8uM7R3UGpDqLxGE0UKnkh1W3yBIxZoGVdHsAs4HrHjA5zKu0mvZ1R34HHKp8TVLYaqUDczbJpfqYVwgISA_FvBO3Ai4f4qjxhpBVQDN5tN5knbFxLGZbctwpolSJJ5gHfC0yEjOj"/>
+<div class="absolute top-4 left-4 flex flex-col space-y-2">
+<span class="px-3 py-1 bg-primary text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Hermano</span>
+<span class="px-3 py-1 bg-primary-container text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">Héroe</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-on-surface">Peluche Pingüino Papúa</h3>
+<p class="text-xs text-on-surface-variant italic">Pygoscelis papua</p>
+</div>
+<span class="text-lg font-bold text-primary">€9.20</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant">
+<span>Stock: 145 unidades</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[95%] rounded-full"></div>
+</div>
+</div>
+<div class="flex space-x-2 pt-2">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg text-sm font-bold hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="flex-1 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary-container transition-colors">Ver pedidos</button>
+</div>
+</div>
+</div>
+<!-- Card 4 (Asymmetric Offset Example) -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex h-48 lg:col-span-2 group">
+<div class="w-1/3 h-full overflow-hidden">
+<img alt="Peluche Pintarroja" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="small stuffed shark toy with grey and white spots, designed for children, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY8YGEZY6i5Joqe53C3Mux3I__OM3JW0-uAHR9Ed71rvLajWyTYjH4XchNRU0Sxk7EcHf7OiD4JQDAj831gaUaCZt00G_9aU5m--SErY1ueVzQAZeswkJ5zw_5uLfFpS_H-YeyA5rbuUXpE2bCGFyXsjGl7Een1uIDxTlOiMWVmPWisnnyGG4RC7PbQaZklvU7UTu_azLu67NSYHF_iPLR2uAYhj-eD99R1PPgKKjmBfCPFWazyPrEhijRJtkDVd_XVjT69FKkayet"/>
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div class="flex justify-between">
+<div>
+<span class="text-[10px] uppercase font-bold text-tertiary tracking-widest mb-1 block">Project: Pintarroja</span>
+<h3 class="text-xl font-bold text-on-surface">Peluche Pintarroja</h3>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">56 unidades</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Stock OK</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex -space-x-2">
+<span class="px-2 py-1 bg-primary text-primary-fixed text-[9px] font-bold rounded shadow-sm">Hermano</span>
+<span class="px-2 py-1 bg-primary-container text-primary-fixed text-[9px] font-bold rounded shadow-sm">Héroe</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<button class="material-symbols-outlined text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Low Stock Alert Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-50">
+<div class="glass-panel border-l-4 border-secondary bg-surface-container-lowest/80 p-4 rounded-xl flex items-center justify-between shadow-2xl shadow-black/10">
+<div class="flex items-center space-x-3 text-secondary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-bold text-sm">2 productos con stock bajo — Revisar pedidos a proveedor</span>
+</div>
+<button class="bg-secondary text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-secondary-fixed-variant transition-all active:scale-95">Gestionar Pedido</button>
+</div>
+</div>
+</body></html>

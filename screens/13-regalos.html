@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Curator - Gestión de Regalos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container-low": "#f9f2ec",
+                "surface-bright": "#fff8f2",
+                "secondary-fixed": "#ffdad6",
+                "inverse-primary": "#8bd2da",
+                "on-primary-container": "#a1e9f1",
+                "on-secondary": "#ffffff",
+                "on-surface": "#1e1b18",
+                "inverse-surface": "#33302c",
+                "on-tertiary-fixed": "#321200",
+                "on-tertiary": "#ffffff",
+                "surface-variant": "#e8e1dc",
+                "primary": "#005258",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#3f484a",
+                "error": "#ba1a1a",
+                "surface-dim": "#dfd9d3",
+                "on-primary-fixed": "#002022",
+                "error-container": "#ffdad6",
+                "primary-container": "#1a6b72",
+                "tertiary-fixed": "#ffdbc9",
+                "surface-tint": "#15686f",
+                "on-tertiary-container": "#ffd4bd",
+                "secondary": "#9d413a",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#6c3918",
+                "on-secondary-container": "#74231f",
+                "on-error": "#ffffff",
+                "secondary-container": "#fc8b80",
+                "surface-container": "#f3ede7",
+                "secondary-fixed-dim": "#ffb4ac",
+                "primary-fixed": "#a6eff6",
+                "outline-variant": "#bec8c9",
+                "tertiary": "#703c1a",
+                "on-background": "#1e1b18",
+                "inverse-on-surface": "#f6f0ea",
+                "on-secondary-fixed-variant": "#7e2a25",
+                "background": "#fff8f2",
+                "on-primary-fixed-variant": "#004f55",
+                "on-error-container": "#93000a",
+                "primary-fixed-dim": "#8bd2da",
+                "surface-container-highest": "#e8e1dc",
+                "surface": "#fff8f2",
+                "on-secondary-fixed": "#410003",
+                "surface-container-high": "#eee7e1",
+                "outline": "#6f797a",
+                "tertiary-fixed-dim": "#ffb68c",
+                "tertiary-container": "#8c532f"
+              },
+              fontFamily: {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col bg-[#005258] dark:bg-slate-950 shadow-24px-ambient z-50">
+<div class="h-full flex flex-col py-8">
+<!-- Brand Header -->
+<div class="px-8 mb-10">
+<h1 class="text-xl font-bold tracking-tight text-[#FFFFFF]">The Curator</h1>
+<p class="text-xs text-[#A6EFF6]/70 uppercase tracking-widest mt-1">Archival Management</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-1">
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl mx-4 my-1 flex items-center gap-3 px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter body-md text-on-primary-fixed-dim">Dashboard</span>
+</a>
+<!-- Active Tab: Regalos -->
+<a class="bg-[#1A6B72] text-[#A6EFF6] rounded-xl mx-4 my-1 flex items-center gap-3 px-4 py-3 font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="redeem">redeem</span>
+<span class="font-inter body-md text-on-primary-fixed-dim">Regalos</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl mx-4 my-1 flex items-center gap-3 px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="font-inter body-md text-on-primary-fixed-dim">Colecciones</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl mx-4 my-1 flex items-center gap-3 px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-inter body-md text-on-primary-fixed-dim">Clientes</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl mx-4 my-1 flex items-center gap-3 px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter body-md text-on-primary-fixed-dim">Configuración</span>
+</a>
+</nav>
+<!-- CTA & Footer -->
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-primary-container text-[#A6EFF6] py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Nuevo Regalo
+                </button>
+<div class="pt-4 border-t border-[#A6EFF6]/10">
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl flex items-center gap-3 px-4 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:bg-[#1A6B72]/50 rounded-xl flex items-center gap-3 px-4 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar sesión</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col min-w-0">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 bg-[#FFF8F2] dark:bg-slate-900 flex justify-between items-center h-16 px-10 bg-surface-container-low-transition">
+<div class="flex items-center gap-8 flex-1">
+<span class="headline-sm font-inter tracking-tight text-[#1E1B18] font-bold">Gestión de Regalos</span>
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Buscar por código o email..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-[#FC8B80] text-on-secondary px-5 py-2 rounded-xl font-bold text-sm shadow-sm hover:brightness-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                    + Generar código manual
+                </button>
+<div class="flex items-center gap-3 border-l border-outline-variant/20 pl-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="history_edu">history_edu</span>
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full bg-surface-container-highest object-cover" data-alt="close-up professional portrait of a tech administrator with short dark hair and a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa8RUP55r3tq9gXwDaMtgE2FvFYJ5l7iCqQmudaZ00XmfRApaweN3YKhZI-4ZXSI1xfMXSy5va0ed0FNdxTEQ4EYmHFarLqVqUc56TDKnzwdBdjfQU4E4no35b-xcSpQKCSiNld_wLihz_zLd8wI56heDlX1nC6x8KBdfNxM2Mt3ynJ7pcrMyhEATuUMXJznHqf-zF4eZTEgV1J_aGKoOD54kK1hMrr6EkH7GrlQ-tg-igGJE8PkqmO7cNXBPG-nTVo-yML3NWazYK"/>
+</div>
+</div>
+</header>
+<main class="flex-1 p-8 flex gap-8">
+<!-- Table & KPIs Section -->
+<div class="flex-1 min-w-0 space-y-8">
+<!-- KPI Strip -->
+<div class="grid grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Total Regalos</p>
+<p class="text-3xl font-extrabold text-on-surface">89</p>
+</div>
+<div class="bg-[#E8F5E9] dark:bg-green-900/20 p-5 rounded-xl border border-green-200/50">
+<p class="text-xs font-bold text-green-800 dark:text-green-300 uppercase tracking-wider mb-1">Canjeados</p>
+<p class="text-3xl font-extrabold text-green-800 dark:text-green-300">67</p>
+</div>
+<div class="bg-[#FFF8E1] dark:bg-amber-900/20 p-5 rounded-xl border border-amber-200/50">
+<p class="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider mb-1">Pendientes</p>
+<p class="text-3xl font-extrabold text-amber-800 dark:text-amber-300">18</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Expirados</p>
+<p class="text-3xl font-extrabold text-[#78909C]">4</p>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex gap-8 border-b border-outline-variant/20">
+<button class="pb-4 text-primary font-bold border-b-2 border-primary transition-all">Todos (89)</button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-primary transition-all">Pendientes (18)</button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-primary transition-all">Canjeados (67)</button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-primary transition-all">Expirados (4)</button>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Código</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Creación</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Remitente</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Destinatario</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Especie</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Nivel</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Estado</th>
+<th class="p-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-bright transition-colors group cursor-pointer bg-primary/5">
+<td class="p-4 font-mono font-bold text-primary">FAUMA-TOR-8A3F</td>
+<td class="p-4 text-sm text-on-surface-variant">10 Mar</td>
+<td class="p-4 text-sm font-medium">María García</td>
+<td class="p-4 text-sm text-on-surface-variant">lucia@email.com</td>
+<td class="p-4 text-sm">Tortuga Caretta</td>
+<td class="p-4 text-sm">Hermano</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-800">Canjeado ✓</span>
+</td>
+<td class="p-4 text-sm">
+<button class="text-primary font-bold hover:underline">Ver detalle</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group cursor-pointer">
+<td class="p-4 font-mono font-bold text-primary">FAUMA-PIN-2B7D</td>
+<td class="p-4 text-sm text-on-surface-variant">15 Mar</td>
+<td class="p-4 text-sm font-medium">Carlos Ruiz</td>
+<td class="p-4 text-sm text-on-surface-variant">pablo@email.com</td>
+<td class="p-4 text-sm">Pingüino Papúa</td>
+<td class="p-4 text-sm">Amigo</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Pendiente</span>
+</td>
+<td class="p-4 text-sm space-x-3">
+<button class="text-primary font-bold hover:brightness-110">Reenviar email</button>
+<button class="text-secondary font-bold hover:brightness-110">Cancelar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group cursor-pointer">
+<td class="p-4 font-mono font-bold text-primary">FAUMA-TOR-9C4E</td>
+<td class="p-4 text-sm text-on-surface-variant">20 Mar</td>
+<td class="p-4 text-sm font-medium italic">Admin (manual)</td>
+<td class="p-4 text-sm text-on-surface-variant">ana@email.com</td>
+<td class="p-4 text-sm">Tortuga Caretta</td>
+<td class="p-4 text-sm">Héroe</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Pendiente</span>
+</td>
+<td class="p-4 text-sm space-x-3">
+<button class="text-primary font-bold">Reenviar</button>
+<button class="text-on-surface-variant font-bold">Copiar código</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group cursor-pointer opacity-80">
+<td class="p-4 font-mono font-bold text-[#78909C]">FAUMA-PIN-1A2B</td>
+<td class="p-4 text-sm text-on-surface-variant">1 Ene</td>
+<td class="p-4 text-sm font-medium">Lucía Fdez</td>
+<td class="p-4 text-sm text-on-surface-variant">pedro@email.com</td>
+<td class="p-4 text-sm">Pingüino Papúa</td>
+<td class="p-4 text-sm">Amigo</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-gray-200 text-[#78909C]">Expirado</span>
+</td>
+<td class="p-4 text-sm">
+<button class="text-secondary-container font-extrabold text-[#9D413A]">Renovar código</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Detail Panel (Right Sidebar) -->
+<aside class="w-[380px] space-y-6">
+<div class="bg-surface-container-high p-8 rounded-xl sticky top-24 shadow-24px-ambient">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] bg-primary text-white px-3 py-1 rounded-full">Detalle del Regalo</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-black text-primary font-mono tracking-tight mb-8">FAUMA-TOR-8A3F</h2>
+<div class="space-y-6">
+<div class="space-y-4">
+<div>
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Remitente</p>
+<p class="text-sm font-semibold text-on-surface">María García</p>
+</div>
+<div>
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Destinatario</p>
+<p class="text-sm font-semibold text-on-surface">Lucía Fernández <span class="text-xs font-normal opacity-60">(lucia@email.com)</span></p>
+</div>
+<div>
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Suscripción</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="water_drop">water_drop</span>
+<p class="text-sm font-bold text-on-surface">Tortuga Caretta caretta · <span class="text-primary-container">Hermano</span></p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-primary/10">
+<p class="text-[11px] font-bold text-primary uppercase tracking-wider mb-2">Dedicatoria</p>
+<p class="text-sm italic text-on-surface-variant leading-relaxed">"¡Feliz cumpleaños! Ahora proteges una tortuga 🐢"</p>
+</div>
+<div class="space-y-4 pt-4 border-t border-outline-variant/20">
+<div>
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">Logística Merch</p>
+<div class="bg-surface-container p-3 rounded-lg text-xs space-y-2">
+<p class="font-medium text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                        C/ Valencia 23, Madrid
+                                    </p>
+<p class="text-green-700 font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                                        Estado: Entregado ✓
+                                    </p>
+</div>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Timeline de Activación</p>
+<div class="relative pl-6 space-y-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[2px] before:bg-primary/20">
+<div class="relative flex items-center gap-4">
+<div class="absolute -left-[23px] w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check">check</span>
+</div>
+<span class="text-xs font-bold">Código Creado</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">10 Mar, 09:15</span>
+</div>
+<div class="relative flex items-center gap-4">
+<div class="absolute -left-[23px] w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check">check</span>
+</div>
+<span class="text-xs font-bold">Email Enviado</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">10 Mar, 09:16</span>
+</div>
+<div class="relative flex items-center gap-4">
+<div class="absolute -left-[23px] w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check">check</span>
+</div>
+<span class="text-xs font-bold">Email Abierto</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">11 Mar, 14:20</span>
+</div>
+<div class="relative flex items-center gap-4">
+<div class="absolute -left-[23px] w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check">check</span>
+</div>
+<span class="text-xs font-bold">Canjeado con Éxito</span>
+<span class="text-[10px] text-on-surface-variant ml-auto">12 Mar, 10:05</span>
+</div>
+<div class="relative flex items-center gap-4">
+<div class="absolute -left-[23px] w-4 h-4 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
+</div>
+<span class="text-xs font-black text-primary">Suscripción Activa</span>
+<span class="text-[10px] text-primary-container ml-auto font-bold">Activo</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-3 border-2 border-primary text-primary font-black rounded-xl hover:bg-primary hover:text-white transition-all">
+                        Descargar Reporte PDF
+                    </button>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

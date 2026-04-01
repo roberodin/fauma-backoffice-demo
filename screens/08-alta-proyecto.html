@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alta de Proyecto | The Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbc9",
+              "surface-container": "#f3ede7",
+              "on-background": "#1e1b18",
+              "surface-container-highest": "#e8e1dc",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#7e2a25",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#321200",
+              "on-error": "#ffffff",
+              "primary-container": "#1a6b72",
+              "secondary-container": "#fc8b80",
+              "on-surface": "#1e1b18",
+              "outline": "#6f797a",
+              "tertiary-container": "#8c532f",
+              "on-primary-container": "#a1e9f1",
+              "on-primary-fixed": "#002022",
+              "surface-container-high": "#eee7e1",
+              "on-tertiary-container": "#ffd4bd",
+              "on-primary": "#ffffff",
+              "surface-dim": "#dfd9d3",
+              "on-primary-fixed-variant": "#004f55",
+              "error-container": "#ffdad6",
+              "error": "#ba1a1a",
+              "surface-bright": "#fff8f2",
+              "inverse-on-surface": "#f6f0ea",
+              "on-error-container": "#93000a",
+              "surface": "#fff8f2",
+              "secondary-fixed-dim": "#ffb4ac",
+              "outline-variant": "#bec8c9",
+              "primary-fixed": "#a6eff6",
+              "inverse-surface": "#33302c",
+              "on-secondary-container": "#74231f",
+              "on-tertiary-fixed-variant": "#6c3918",
+              "surface-tint": "#15686f",
+              "on-surface-variant": "#3f484a",
+              "on-secondary-fixed": "#410003",
+              "secondary-fixed": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb68c",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#9d413a",
+              "primary-fixed-dim": "#8bd2da",
+              "background": "#fff8f2",
+              "tertiary": "#703c1a",
+              "inverse-primary": "#8bd2da",
+              "surface-variant": "#e8e1dc",
+              "surface-container-low": "#f9f2ec",
+              "primary": "#005258"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f2; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #bec8c9; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-[#005258] dark:bg-slate-950 font-inter antialiased text-sm font-medium tracking-tight shadow-2xl shadow-teal-900/20 flex flex-col py-6 gap-2">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-white tracking-tighter">The Curator</h1>
+<p class="text-[#A6EFF6]/60 text-xs">Archival Management</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#A6EFF6]/70 hover:text-white transition-colors mx-2 px-4 py-3 flex items-center gap-3 hover:bg-[#1A6B72]/50 rounded-xl" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Tablero</span>
+</a>
+<a class="bg-[#1A6B72] text-[#A6EFF6] rounded-xl mx-2 px-4 py-3 flex items-center gap-3 transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span>Proyectos</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white transition-colors mx-2 px-4 py-3 flex items-center gap-3 hover:bg-[#1A6B72]/50 rounded-xl" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Archivos</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white transition-colors mx-2 px-4 py-3 flex items-center gap-3 hover:bg-[#1A6B72]/50 rounded-xl" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Equipo</span>
+</a>
+<a class="text-[#A6EFF6]/70 hover:text-white transition-colors mx-2 px-4 py-3 flex items-center gap-3 hover:bg-[#1A6B72]/50 rounded-xl mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="px-4 mt-6">
+<button class="w-full bg-[#1A6B72] text-[#A6EFF6] py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#15686f] transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                Nuevo Proyecto
+            </button>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-30 ml-64 bg-[#FFF8F2]/80 backdrop-blur-md font-inter body-md text-[#1E1B18] flex justify-between items-center h-16 px-8 max-w-[calc(100%-16rem)]">
+<div class="flex items-center gap-4">
+<span class="text-lg font-semibold text-[#1A6B72]">Alta de Proyecto</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant text-sm font-normal">Fauma</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">help_outline</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant opacity-20"></div>
+<div class="flex items-center gap-3">
+<img class="h-8 w-8 rounded-full object-cover" data-alt="Close-up portrait of a professional administrator with short hair and kind expression in a bright office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM_8NQQF5CDe4hvQtIHnmSn8yhRH3RfaCaq40s4E06v2WMX7VyYdeVFCHm54vn4IrZIVKeVAeuLMD5TVE7D7SM_Ep6sBjPlaE1UFuN4jKRjJ8I8grGCFScOTfC8fVfDJ4FiWQfyl6VA7vxwB90k1wejnk67pkzXyTdq87i_BmporCZMTbstDAMMGraFpYWYoETx0dJat1DGlGJ6gX_p2n7MGsI4SRq2JSi7wow46g51pdUG8Q0Nx5nPXLa0WVbQDwZG7DNkx9lVivR"/>
+<span class="text-sm font-medium">Admin Fauma</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 p-8 pb-32 max-w-6xl mx-auto space-y-12">
+<!-- Section 1: Project Identity -->
+<section class="space-y-6">
+<div class="space-y-1">
+<h2 class="text-2xl font-bold tracking-tight text-on-surface">Identidad del Proyecto</h2>
+<p class="text-on-surface-variant text-sm">Define el nombre principal y la marca de la iniciativa.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Nombre del Proyecto</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl h-16 px-6 text-xl font-medium focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="Ej. Restauración de Humedales Fauma" type="text"/>
+</div>
+</section>
+<!-- Section 2: Duration -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-3 space-y-1">
+<h3 class="text-lg font-semibold text-on-surface">Tiempo total campaña</h3>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Duración (Meses)</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3" type="number" value="12"/>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Fecha de Inicio</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3" type="date"/>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Fecha de Cierre</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3" type="date"/>
+</div>
+</section>
+<!-- Section 3: Phases -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="text-lg font-semibold text-on-surface">Fases de la campaña</h3>
+<p class="text-sm text-on-surface-variant">Gestiona el cronograma secuencial del proyecto.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Añadir fase
+                </button>
+</div>
+<div class="space-y-3">
+<!-- Phase Item Loop -->
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl group transition-all hover:bg-surface-container">
+<span class="material-symbols-outlined text-outline-variant cursor-grab">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm" type="text" value="Fase 1: Diagnóstico inicial"/>
+<div class="flex items-center gap-3">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm w-32" type="text" value="2 meses"/>
+<span class="text-outline-variant material-symbols-outlined text-xl">calendar_today</span>
+</div>
+</div>
+<button class="p-2 text-error opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<!-- Repeat 4 more times for UI completeness -->
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl group">
+<span class="material-symbols-outlined text-outline-variant cursor-grab">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm" type="text" value="Fase 2: Intervención directa"/>
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm w-32" type="text" value="4 meses"/>
+</div>
+<button class="p-2 text-error opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl group">
+<span class="material-symbols-outlined text-outline-variant cursor-grab">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm" type="text" value="Fase 3: Monitoreo biológico"/>
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm w-32" type="text" value="3 meses"/>
+</div>
+<button class="p-2 text-error opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl group">
+<span class="material-symbols-outlined text-outline-variant cursor-grab">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm" type="text" value="Fase 4: Evaluación de impacto"/>
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm w-32" type="text" value="2 meses"/>
+</div>
+<button class="p-2 text-error opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl group">
+<span class="material-symbols-outlined text-outline-variant cursor-grab">drag_indicator</span>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm" type="text" value="Fase 5: Cierre y reporte"/>
+<input class="bg-surface-container-lowest border-none rounded-lg px-4 py-2 text-sm w-32" type="text" value="1 mes"/>
+</div>
+<button class="p-2 text-error opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</section>
+<!-- Section 4: Ficha Técnica (Accordion Cards) -->
+<section class="space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Ficha técnica del espécimen</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Accordion Card 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Identificación y taxonomía</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="p-5 space-y-3">
+<div class="h-32 bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/20 flex flex-col gap-2">
+<div class="flex gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-sm">format_bold</span>
+<span class="material-symbols-outlined text-sm">format_italic</span>
+<span class="material-symbols-outlined text-sm">format_list_bulleted</span>
+</div>
+<p class="text-xs text-outline-variant italic">Editor de texto enriquecido...</p>
+</div>
+</div>
+</div>
+<!-- Accordion Card 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Biometría y morfología</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<div class="p-5 hidden"><p class="text-xs">Contenido colapsado...</p></div>
+</div>
+<!-- Accordion Card 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Ecología y Distribución</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Accordion Card 4 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Etología y Comportamiento</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Accordion Card 5 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Fisiología y Alimentación</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Accordion Card 6 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-5 flex justify-between items-center bg-surface-container-high cursor-pointer">
+<span class="font-bold text-sm">Biología Reproductiva</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Amenazas -->
+<section class="space-y-8">
+<div class="space-y-1">
+<h3 class="text-lg font-semibold text-on-surface">Amenazas y Desafíos</h3>
+<p class="text-sm text-on-surface-variant">Identifica los factores de riesgo del entorno.</p>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-6 rounded-xl space-y-4">
+<div class="grid grid-cols-12 gap-4">
+<div class="col-span-5">
+<label class="text-[10px] font-bold uppercase text-on-surface-variant">Nombre de la Amenaza</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg mt-1 text-sm" placeholder="Ej. Deforestación" type="text"/>
+</div>
+<div class="col-span-3">
+<label class="text-[10px] font-bold uppercase text-on-surface-variant">Gravedad</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg mt-1 text-sm">
+<option>Crítica</option>
+<option>Alta</option>
+<option>Moderada</option>
+</select>
+</div>
+<div class="col-span-4 flex items-end">
+<button class="w-full text-primary font-bold text-sm flex items-center justify-center gap-2 border border-primary/20 rounded-lg h-10 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Añadir amenaza
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Medidas de conservación</label>
+<div class="h-40 bg-surface-container-low rounded-xl p-4 flex flex-col gap-2">
+<div class="flex gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-sm">format_bold</span>
+<span class="material-symbols-outlined text-sm">format_list_bulleted</span>
+</div>
+<textarea class="flex-1 bg-transparent border-none resize-none text-sm focus:ring-0" placeholder="Describe las medidas actuales..."></textarea>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Cómo ayuda Fauma</label>
+<div class="h-40 bg-surface-container-low rounded-xl p-4 flex flex-col gap-2">
+<div class="flex gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-sm">format_bold</span>
+<span class="material-symbols-outlined text-sm">format_list_bulleted</span>
+</div>
+<textarea class="flex-1 bg-transparent border-none resize-none text-sm focus:ring-0" placeholder="Define el rol de la plataforma..."></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Profundizando (Bento Grid Style) -->
+<section class="space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Profundizando en el proyecto</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Alcance y Origen -->
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-xl space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Alcance e Importancia</label>
+<div class="h-32 bg-surface-container-lowest rounded-lg p-3 text-sm text-outline-variant">Editor...</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Orígenes del Proyecto</label>
+<div class="h-32 bg-surface-container-lowest rounded-lg p-3 text-sm text-outline-variant">Editor...</div>
+</div>
+</div>
+<!-- Video & Materials -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Video Principal</label>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl aspect-video flex flex-col items-center justify-center text-outline-variant hover:border-primary/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-2">video_call</span>
+<span class="text-[10px] font-bold">SUBIR MP4/MOV</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Lista de Materiales</label>
+<div class="space-y-2">
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container rounded-md flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-sm">image</span>
+</div>
+<div class="flex-1 text-[10px] font-bold">DRON MAVIC 3</div>
+<span class="material-symbols-outlined text-sm text-outline-variant">close</span>
+</div>
+<button class="w-full py-2 text-[10px] font-bold text-primary border border-primary/20 rounded-lg">+ AÑADIR MATERIAL</button>
+</div>
+</div>
+</div>
+<!-- Locations -->
+<div class="md:col-span-3 bg-surface-container-low p-6 rounded-xl space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Ubicaciones del Proyecto</label>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="text-sm font-bold">Estación Biológica Central</h5>
+<p class="text-[10px] text-on-surface-variant">Selva Alta, Sector 4</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+</div>
+<div class="w-full h-24 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-80" data-alt="Stylized satellite map visualization showing green forest terrain and a highlighted research station location" data-location="Selva Alta, Sector 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD57f7xL6oYyEEVWHFN1zKt5c5TgncidQemN5UDrJdezefCpF1h-8ruu07nUZWAMrqMqQiiB5CoHOM3Ydc7GOhfSryu16rWg8bbXUfrsyxdP8Z9aTCQk2xZxEo2cj0Nkm2pPjrBUfi8hr3IzzmHsZ7yfzliAuSTmvQla29I2SasBytd3I_lQsXM6gEqR_6vFWieds0E3hD_C25OY_UCzwOmPkK39uEWCaPRDEhawYrRmkrSju2cde0nVnju2x7Tbju6KoZkMXobQ6sm"/>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline-variant">add_location_alt</span>
+<span class="text-xs font-bold text-on-surface-variant">Nueva Ubicación</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Equipo & Q&A -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-12">
+<h3 class="text-lg font-semibold text-on-surface">Conoce al equipo</h3>
+</div>
+<div class="md:col-span-7 bg-surface-container-low p-6 rounded-xl space-y-6">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Galería del Equipo</label>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container-lowest rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female scientist in field gear smiling outdoors in a lush tropical forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrT6Hv-Zo3c2fTPCy9PgBzxFO9MYt9exJ8eXz4sjQqXfEQV0ahqB9NZU09R-H4S58v-38_bxEY4D6czieegplu6epayC3qo1JnKw436vrG6CqrRHG9eE00Vth4VgTXkOAA5x6XKBrCOhNT9SL4zsl72pcy1-3abWj53fCCcyOfIwj8TwyOJV5gBvNzqIqS1BYkLrdT0mFK54in8L9stnoBmE1oNxUHQ4qiWfTxZdv8-jO02ZZcaBNg4ykJo6at7z1husdjSI6QGWMS"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">delete</span>
+</div>
+</div>
+<div class="aspect-square border-2 border-dashed border-outline-variant/30 rounded-lg flex items-center justify-center cursor-pointer hover:border-primary">
+<span class="material-symbols-outlined text-outline-variant">upload_file</span>
+</div>
+</div>
+<div class="space-y-4 pt-4 border-t border-outline-variant/10">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Configuración Sesiones Abiertas</label>
+<div class="grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-lg text-sm" placeholder="Próxima sesión (dd/mm/aaaa)" type="text"/>
+<input class="bg-surface-container-lowest border-none rounded-lg text-sm" placeholder="Link de acceso" type="text"/>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 bg-surface-container-low p-6 rounded-xl space-y-6">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Q&amp;A: Pregunta al Experto</label>
+<div class="space-y-3 max-h-64 overflow-y-auto custom-scrollbar pr-2">
+<div class="bg-surface-container-lowest p-3 rounded-lg space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">DR. MARIO G.</span>
+<span class="text-[9px] text-outline-variant">Activo</span>
+</div>
+<p class="text-xs font-medium">¿Cómo afecta la sequía al hábitat?</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg space-y-2 opacity-60">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">DRA. ELENA L.</span>
+<span class="text-[9px] text-outline-variant">Pendiente</span>
+</div>
+<p class="text-xs font-medium italic">Esperando respuestas...</p>
+</div>
+</div>
+<button class="w-full py-3 bg-primary-container text-primary-fixed text-xs font-bold rounded-xl hover:opacity-90 transition-opacity">CONFIGURAR RESPUESTAS</button>
+</div>
+</section>
+<!-- Section 8: Resultados -->
+<section class="space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Resultados</h3>
+<div class="bg-surface-container-low rounded-xl p-8 space-y-8">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Hallazgo Destacado</label>
+<div class="h-24 bg-surface-container-lowest rounded-lg p-3 text-sm text-outline-variant italic">Describe el descubrimiento principal del periodo actual...</div>
+</div>
+<div class="space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Progreso Mensual (Data Table)</label>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-4 py-3 text-[10px] font-bold uppercase text-on-surface-variant rounded-l-lg">Mes</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase text-on-surface-variant">Objetivo</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase text-on-surface-variant">Cumplimiento (%)</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase text-on-surface-variant rounded-r-lg text-right">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="px-4 py-4 text-sm font-medium">Enero</td>
+<td class="px-4 py-4 text-sm">Levantamiento Base</td>
+<td class="px-4 py-4">
+<div class="w-full bg-surface-container rounded-full h-1.5 max-w-[100px]">
+<div class="bg-primary h-1.5 rounded-full w-[100%]"></div>
+</div>
+</td>
+<td class="px-4 py-4 text-right"><span class="px-2 py-1 bg-tertiary-container/20 text-tertiary text-[10px] font-bold rounded uppercase">Completado</span></td>
+</tr>
+<tr>
+<td class="px-4 py-4 text-sm font-medium">Febrero</td>
+<td class="px-4 py-4 text-sm">Mapeo Satelital</td>
+<td class="px-4 py-4">
+<div class="w-full bg-surface-container rounded-full h-1.5 max-w-[100px]">
+<div class="bg-primary h-1.5 rounded-full w-[45%]"></div>
+</div>
+</td>
+<td class="px-4 py-4 text-right"><span class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold rounded uppercase">En proceso</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: Observa el proceso -->
+<section class="space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Observa el proceso</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Resúmenes de Video Mensuales</label>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+<span class="text-sm font-medium">Resumen_Mes_01.mp4</span>
+</div>
+<span class="text-xs text-outline-variant">2.4 MB</span>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-outline-variant/30 rounded-xl text-xs font-bold text-outline-variant hover:border-primary transition-all">SUBIR VIDEO MENSUAL</button>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Behind-The-Scenes Gallery</label>
+<div class="grid grid-cols-3 gap-2">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Scientific team working with sensitive electronic monitoring equipment in a field tent under moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwrGF1ZXZGnXLwRbfPiDCZ2e3j3fSlRI1ec0Q_KGFAKFTxsF3yPDVVICpjnN4hbD8iHKL5rGFo4ggnhgeVyxFOVtTbAFH2QnrxhGjdMIIvogb3Fop4MYD1Uo5AxR2vs2ANjed6PrHcf96qEj03WLY5eqISTU-bZcZFG-L2Gg3-DZRjrqX-yttFQLv-mP9Ga_dVtKqEaMnv38Ihm5iS5gbCvUdD6u69peADG8dz9UcmyCLC9T-_EOBbCxMlnPh9ewwsBK90U6hP5S_1"/>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of hands taking precise soil samples from a riverbed with scientific instruments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDtyouYSxAZWMH1XXtGLPhfJeLKbc_ntgGQxynRpeZjoee39IGowFQ5ZMYggGPKudCVOjD6vpOwog8sCH23HZGkYFeLNOk4JrmgWlYM7yjD_4laEIxArnVNnN0DEpY6-Z-94FH_HLKR57KZo5c2ah8C-O21uXByyMSbA2BrszDz5HOdDkrGs_gGFoUAr_ZSKGmilp3xzdpMEB21OSJxWYG2VmY-0Pxge4bv0KkOMNFP9VBJ_flQpOq78su3MYMYlYRqDyOySlhs61X"/>
+</div>
+<div class="aspect-square border-2 border-dashed border-outline-variant/30 rounded-lg flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-outline-variant">add_a_photo</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 10: Galería Final -->
+<section class="space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Galería Multimedia</h3>
+<div class="bg-surface-container-low p-6 rounded-xl space-y-8">
+<div class="space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Multi-Photo Upload Grid</label>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="aspect-video bg-surface-container-lowest rounded-xl flex items-center justify-center flex-col gap-2 cursor-pointer hover:bg-white transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline-variant">image</span>
+<span class="text-[9px] font-bold text-outline-variant">ARRASTRAR</span>
+</div>
+<img class="aspect-video object-cover rounded-xl" data-alt="Panoramic landscape of a restored wetland at dawn with mist rising over the water and birds flying overhead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwCG72w7cpVZlaGuGn7sA-lx57Z2OCG_d8jP5QmngX2Bqg1zEsMLESa6XYPGbFIC6TXSo9M2YQYGIT3KReGGTUllawZPK70xHN0N9xbzKBfeJVVBych4YepWiyfsDWBjN_ifwmODs681iPBCwwOJdkmzujgzLwAVnQvJg53tqcPW-z4ehDCNq9D_c5V6k2ZlPBDT3Us2DOtgre8vvCRaR61bEh2NijxxOISWQJo_Xdyotbm9TzGc-1bn_vuW3L8wevjhkcI0WWrtTL"/>
+<img class="aspect-video object-cover rounded-xl" data-alt="Detailed close-up of a rare orchid flower in vibrant colors with water droplets on its petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp8ZIgPQM5YuctmG4vCq7ipj_9q8eSzmoAMcsbLHMX4DixAp3w5U36z5-hgkwDRRCJLaPG_2cnGY_lvhgR4qa3Yz6z-R9n6sN4PgM0gNTAw_dBzG-jJk215P0CYf4sLpoPoZgJMm1HzoZyUM3ZHW75TQbmC7KpIuYTgAA-y0sQXnSuKJRCOPIXmnXfroNcLQ_HXF-dwmgCG1Zx4BL6SjVQHMJUp73--Tf1xSjrlGU0upi5MZlZY9RoX5BJXF_xev01bwOL-Qo_xNlt"/>
+<img class="aspect-video object-cover rounded-xl" data-alt="Bird-eye view of a winding river through a deep green canyon with clear turquoise water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfn_M3_QvCNTpVMaVVvu3STTtAYbKasMRb2YvbMRgkEx3sycemQFKjwVtf3otH5GMc41hg1fneKU1m-KNFFPH8s0gF1lUeC5AexvksyJq9KNkPhDijOrCh0ZiESYtKLRS-SflC6XVwu9IKFMgv46IF2PhWyh5HC_2G-G5dRuI27WbPwa2lmosO-aRWT8hs8yDujVncp9LT_YA3u_vXsuyhnPeIUYuRe9RHhXvZGHowzwJo9Q4uq_HPGpBNWItj7qfBXxY4C_glF1Fd"/>
+<img class="aspect-video object-cover rounded-xl" data-alt="Two researchers in camouflage gear tracking wildlife through tall grass with binoculars and a tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd4YgM7ONNtPY4aQTl-JDSfWja-zN7PMklgyUjOzgrCVRSg2Y8K4VxNcFh8xacCKIO22SNv1Nuwjb8GHJrKI97mRmg32ejZEOWnSbvKy10Z-mYRQ3EElhZ7wyCO8si2rk71axmQQqqJkuIL7Ednbk8l1_vYtXoBYpd4-PW0Ms22TmVB8ToElK3xA5PWeVln1mQ29K-Qm4Pqu_FZFA1se6z1mmsQKGzkV7GpGOKmT_p7B64hUSgdbEklt3h3jait2EiBYaKWg39lZOG"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Lista de URLs de Video</label>
+<div class="space-y-2">
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-lowest border-none rounded-lg text-sm" placeholder="https://vimeo.com/..." type="text"/>
+<button class="bg-primary-container text-primary-fixed px-6 rounded-lg text-xs font-bold">VINCULAR</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-64 right-0 h-20 bg-surface-container-lowest shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.1)] flex items-center justify-between px-12 z-50">
+<button class="text-on-surface-variant font-bold text-sm hover:text-on-surface transition-colors">Cancelar</button>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-xl border border-outline-variant text-on-surface text-sm font-bold hover:bg-surface-container transition-colors">Guardar borrador</button>
+<button class="px-10 py-2.5 rounded-xl bg-secondary-container text-on-secondary-container text-sm font-extrabold shadow-lg shadow-secondary-container/20 hover:scale-[1.02] active:scale-[0.98] transition-all">Publicar</button>
+</div>
+</footer>
+</body></html>
