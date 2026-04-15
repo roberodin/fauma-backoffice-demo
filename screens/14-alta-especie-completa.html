@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "background": "#fff8f2",
+                        "surface-container-highest": "#e8e1dc",
+                        "surface": "#fff8f2",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1e1b18",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed-dim": "#8bd2da",
+                        "surface-container": "#f3ede7",
+                        "outline-variant": "#bec8c9",
+                        "on-secondary-fixed-variant": "#7e2a25",
+                        "inverse-on-surface": "#f6f0ea",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#703c1a",
+                        "surface-tint": "#15686f",
+                        "surface-dim": "#dfd9d3",
+                        "on-tertiary-fixed-variant": "#6c3918",
+                        "on-primary-container": "#a1e9f1",
+                        "on-primary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "inverse-primary": "#8bd2da",
+                        "primary-container": "#1a6b72",
+                        "on-error": "#ffffff",
+                        "on-background": "#1e1b18",
+                        "primary-fixed": "#a6eff6",
+                        "surface-container-high": "#eee7e1",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#410003",
+                        "tertiary-fixed": "#ffdbc9",
+                        "tertiary-container": "#8c532f",
+                        "on-secondary-container": "#74231f",
+                        "secondary-container": "#fc8b80",
+                        "on-tertiary-fixed": "#321200",
+                        "surface-variant": "#e8e1dc",
+                        "on-primary-fixed-variant": "#004f55",
+                        "surface-container-low": "#f9f2ec",
+                        "on-surface-variant": "#3f484a",
+                        "inverse-surface": "#33302c",
+                        "primary": "#005258",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fff8f2",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#ffd4bd",
+                        "outline": "#6f797a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#9d413a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f5f5f5; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #bec8c9; border-radius: 10px; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SIDEBAR -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#005258] flex flex-col py-8 px-4 shadow-2xl shadow-[#1E1B18]/10 z-50">
+<div class="mb-10 px-4">
+<span class="text-lg font-bold text-white tracking-widest uppercase">The Curator</span>
+<p class="text-[#A6EFF6]/60 text-xs mt-1">Species Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6] bg-white/10 rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">database</span>
+<span>Species Archive</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Field Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Platform Logs</span>
+</a>
+</nav>
+<div class="pt-8 mt-8 border-t border-white/10 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#A6EFF6]/60 hover:bg-white/5 transition-colors rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 ml-64 bg-[#F5F5F5] min-h-screen pb-24">
+<!-- TOP NAV BAR -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-[#FFF8F2] flex justify-between items-center px-8 z-40">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold text-[#1A6B72]">Alta de Especie</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 text-[#3F484A] font-medium hover:text-[#005258] transition-all">Guardar borrador</button>
+<button class="px-8 py-2 bg-gradient-to-tr from-[#005258] to-[#1A6B72] text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-all">Publicar</button>
+</div>
+</header>
+<div class="mt-20 px-12 max-w-7xl mx-auto space-y-10">
+<!-- DATOS GENERALES -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<h2 class="text-headline-sm font-bold text-on-surface">Datos Generales</h2>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-8 space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Nombre Común</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" type="text" value="Tortuga Carey"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Nombre Científico</label>
+<input class="w-full italic bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" type="text" value="Eretmochelys imbricata"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Familia</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" type="text" value="Cheloniidae"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Estatus IUCN</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20">
+<option>En Peligro Crítico (CR)</option>
+<option>Vulnerable (VU)</option>
+<option>Extinto en Libertad (EW)</option>
+</select>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Etiquetas</label>
+<div class="flex gap-2">
+<span class="px-4 py-1.5 bg-primary text-white rounded-full text-xs font-bold">MARINA</span>
+<span class="px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold">TERRESTRE</span>
+<button class="p-1 text-primary hover:bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="col-span-4 space-y-6">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Hero Image</label>
+<div class="relative group aspect-video rounded-xl overflow-hidden bg-surface-container-high cursor-pointer">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="close-up of a hawksbill sea turtle swimming through vibrant coral reef with clear blue water and sun rays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUFufQbzJr07s49VO-hh69FFJN1_OJk7TLY3x571BvHFNDRI-uzaS5tRLvXmxehU0p5arK9LT7NxUhjp6uQevcOnL4n6TKSQ2ZmGNZ4zPMzBetPgTJ5RxqRTnJhyjrtj3K-IlLIJlY-AS-KTNm3zIBfZWvqTyvREEaXOiHRTbWLjKICX3O7XlGbeMtG9AvxIdyjNaJDMHi-3ygUtMESjx06yMyjBt0hipF1raafr5VKnl7RqKGNU6PUZrGk-ukFC8cUJlIgA9doaGR"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white text-xs font-bold bg-black/40 px-3 py-1 rounded-full">Cambiar</span>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Thumbnail</label>
+<div class="w-24 h-24 bg-surface-container-high rounded-xl flex items-center justify-center border-2 border-dashed border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline">add_a_photo</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FICHA TÉCNICA (ACCORDION STYLE) -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8 border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">magnification_small</span>
+<h2 class="text-headline-sm font-bold text-on-surface">Ficha Técnica</h2>
+</div>
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl">
+<button class="px-4 py-1.5 bg-white text-primary font-bold rounded-lg text-sm shadow-sm">Taxonomía</button>
+<button class="px-4 py-1.5 text-on-surface-variant font-medium rounded-lg text-sm hover:bg-white/50 transition-all">Biometría</button>
+<button class="px-4 py-1.5 text-on-surface-variant font-medium rounded-lg text-sm hover:bg-white/50 transition-all">Ecología</button>
+<button class="px-4 py-1.5 text-on-surface-variant font-medium rounded-lg text-sm hover:bg-white/50 transition-all">Dieta</button>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Taxonomy Content Example -->
+<div class="grid grid-cols-12 gap-10">
+<div class="col-span-12">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-2 block">Origen Evolutivo</label>
+<div class="min-h-[160px] p-6 bg-surface-container-high rounded-xl text-on-surface body-md leading-relaxed">
+<p>La <strong class="text-primary">Eretmochelys imbricata</strong> posee un linaje que se remonta a finales del Jurásico. Sus placas imbricadas son una adaptación defensiva única contra depredadores de arrecife. Su estructura ósea demuestra una especialización extrema para la navegación en corrientes costeras...</p>
+<div class="mt-4 flex gap-2">
+<button class="p-1 hover:bg-white/50 rounded"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1 hover:bg-white/50 rounded"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1 hover:bg-white/50 rounded"><span class="material-symbols-outlined text-lg">link</span></button>
+</div>
+</div>
+</div>
+<div class="col-span-4 space-y-4">
+<div class="p-4 bg-surface rounded-xl">
+<h4 class="text-xs font-bold text-primary uppercase mb-2">Biometría</h4>
+<div class="space-y-2 text-sm">
+<div class="flex justify-between border-b border-surface-container-highest pb-1"><span>Largo Máx:</span> <span class="font-bold">114 cm</span></div>
+<div class="flex justify-between border-b border-surface-container-highest pb-1"><span>Peso Máx:</span> <span class="font-bold">80 kg</span></div>
+<div class="flex justify-between"><span>Longevidad:</span> <span class="font-bold">50+ años</span></div>
+</div>
+</div>
+</div>
+<div class="col-span-8">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-2 block">Adaptaciones Morfológicas</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 h-24 focus:ring-2 focus:ring-primary/20" placeholder="Describa las adaptaciones específicas..."></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- CICLO BIOLÓGICO MENSUAL -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-primary">event_repeat</span>
+<h2 class="text-headline-sm font-bold text-on-surface">Ciclo Biológico Mensual</h2>
+</div>
+<div class="space-y-3">
+<!-- Expanded Month -->
+<div class="bg-primary-container/10 border border-primary/20 rounded-xl overflow-hidden">
+<div class="flex items-center px-6 py-4 cursor-pointer">
+<span class="w-12 text-primary font-black text-xl">01</span>
+<div class="flex-1">
+<h3 class="font-bold text-primary">El Despertar del Arrecife</h3>
+<p class="text-xs text-primary/70">Migración post-reproductiva inicial</p>
+</div>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<div class="px-6 pb-6 pt-2 grid grid-cols-2 gap-8 border-t border-primary/10">
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Suceso biológico</h4>
+<p class="text-sm">Las hembras inician el retorno a las áreas de alimentación principales tras la temporada de anidación intensa.</p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Causa etológica</h4>
+<p class="text-sm">Necesidad de recuperación calórica masiva y descenso de la temperatura superficial del agua en latitudes norte.</p>
+</div>
+</div>
+</div>
+<!-- Semi-Collapsed Months -->
+<div class="bg-surface-container-low rounded-xl flex items-center px-6 py-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="w-12 text-on-surface-variant font-black text-xl opacity-40">02</span>
+<div class="flex-1">
+<h3 class="font-bold">Tránsito Abisal</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+<div class="bg-surface-container-low rounded-xl flex items-center px-6 py-4 hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="w-12 text-on-surface-variant font-black text-xl opacity-40">03</span>
+<div class="flex-1">
+<h3 class="font-bold">Llegada a Forrajeo</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+<!-- Collapsed/Inactive indicator -->
+<div class="flex items-center justify-center py-4 text-outline-variant italic text-sm">
+                        Abril - Diciembre contraídos para edición individual
+                    </div>
+</div>
+</section>
+<!-- CONTENIDO CALENDARIO & VETERINARIA (Bento Layout) -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Sabías Qué / Mitos / Preguntas -->
+<div class="col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex gap-8 mb-6 border-b border-surface-container pb-2">
+<button class="border-b-2 border-primary pb-2 text-primary font-bold text-sm">Sabías Qué</button>
+<button class="text-on-surface-variant font-medium text-sm hover:text-primary transition-all">Mitos</button>
+<button class="text-on-surface-variant font-medium text-sm hover:text-primary transition-all">Preguntas Frecuentes</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] uppercase text-on-surface-variant tracking-widest font-bold">
+<th class="py-4 px-2">Mes</th>
+<th class="py-4 px-2">Título Curado</th>
+<th class="py-4 px-2">Estado</th>
+<th class="py-4 px-2 text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-t border-surface-container">
+<td class="py-4 px-2 font-bold text-primary">Enero</td>
+<td class="py-4 px-2">Esponjas de Sílice</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-tertiary-container text-on-tertiary-fixed text-[10px] rounded font-bold uppercase">Archivado</span></td>
+<td class="py-4 px-2 text-right text-outline">edit</td>
+</tr>
+<tr class="border-t border-surface-container">
+<td class="py-4 px-2 font-bold text-primary">Febrero</td>
+<td class="py-4 px-2">Vuelo Submarino</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-[10px] rounded font-bold uppercase">Pendiente</span></td>
+<td class="py-4 px-2 text-right text-outline">edit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Enciclopedia Veterinaria -->
+<div class="col-span-4 bg-primary rounded-xl p-8 shadow-sm text-white flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary-fixed">medication</span>
+<h2 class="text-headline-sm font-bold">Vademécum</h2>
+</div>
+<p class="text-xs text-white/70 mb-8">Protocolos médicos y procedimientos de rescate curados para esta especie.</p>
+<div class="grid grid-cols-2 gap-3 flex-1">
+<div class="bg-white/10 p-3 rounded-xl hover:bg-white/20 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary-fixed text-lg mb-2">respiratory_rate</span>
+<h4 class="text-xs font-bold">Anestesia</h4>
+</div>
+<div class="bg-white/10 p-3 rounded-xl hover:bg-white/20 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary-fixed text-lg mb-2">biotech</span>
+<h4 class="text-xs font-bold">Hematología</h4>
+</div>
+<div class="bg-white/10 p-3 rounded-xl hover:bg-white/20 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary-fixed text-lg mb-2">emergency</span>
+<h4 class="text-xs font-bold">Rescate</h4>
+</div>
+<div class="bg-white/10 p-4 border border-dashed border-white/30 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+<button class="mt-8 w-full py-3 bg-primary-fixed text-primary font-bold rounded-xl text-sm">Ver 16 Procedimientos</button>
+</div>
+</div>
+<!-- GALERÍA Y MEDIA -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8 border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+<h2 class="text-headline-sm font-bold text-on-surface">Galería y Media</h2>
+</div>
+<div class="flex gap-4 items-center">
+<div class="flex bg-surface-container px-2 py-1 rounded-full text-xs font-bold text-on-surface-variant">
+<button class="px-4 py-1.5 bg-white text-primary rounded-full shadow-sm">Fotos</button>
+<button class="px-4 py-1.5">Vídeos</button>
+<button class="px-4 py-1.5">Mapas</button>
+</div>
+<button class="p-2 bg-primary text-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">cloud_upload</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-4">
+<div class="aspect-square rounded-xl bg-surface-container-high overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="vibrant sea turtle swimming in turquoise ocean water with glowing sunlight filtering through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxk2mAdxjil1MgUBKkv2FQj31Wc-rA5hraubbZg_y5iVOIT1ttE0DhB1hErvLKEnungZIa2BGOVoBOThgkvMRdeYfgNtRdDTEP3n8vntrsism7OjaSYTBDF-goyX1qHrw20ozDCW5vrShItem6ooRYDPa7YPxZinhP9y85V6BP3KmQOwrfZfwWbSd5fR3iYXEqyHsIeVQItEsc4Eq2X6lS9KSws_wPkRvSmCzIDpcLQs6a5yWFENfElv-AIn0xM6l-3JqGeplOWKos"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">delete</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-high overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="close up detailed look at the textured shell and neck of an ancient tortoise in a natural habitat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAq57eUnZ1nv3rT9Wge_blHJq_o-KQk1P0H0XMO5oqfAwO7RuqlGQ8I0bAwdT16JUA9ccRo-n2p3vPbh7yVusNKAAO_iz6_N31DMjsGImTsXrZ9p0p6DaX6KZgmX8Ge4RBbPl6cL13x7f2cdlbUuKt7jvFuc7XgZDzdSj_6ogvAjDytvuHKLnI5SNiTsJheoIwn_j-1oITPXOMEWJ7zKp44vfh5enP6acHod12NMi1VVmW5z0DXkwoo_Y11muCiLFvh2PmBZQpJ04f"/>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-high overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="sea turtle swimming gracefully over a colorful coral reef with bright fish in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoYcFCDIO5v3Vlu8Sab6mxwxaH1b5_z64jJtpmalcTKNsb_rsa_2Teg8RPW0MNMPuZEWG4MJu4gCbp7i2P8FwEOuvAWVoopzepphRKazryVzmXccHIaiBythpxhxvBgNrSEtEAv7yh4PZp2-i566yvKWB9F50LzCJ6Z_3DEnSVBs2t5pIJB4kMdRm1IoSTAJKV5flpAhU9KRS3uR9QLl2WoEQXuCm4isC34eETXlQHl3DIeTRu_HnrjjNUl3mTJkNSO9fc_7vxzaWz"/>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-high overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="aerial view of baby sea turtles hatching and crawling across sand towards a moonlit ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdHlefym--vaJQ3JIqvi5RMy2jyI7jD-LhKHK--FmD-yGInlib6H2wgAcWbJNudQAtYSHgqyVkTMdhVHDq-w872fWfrCl_0WaNzxaG8zshT_HWTfoPO98eXWR53nDquHNHrpaOXU4HSxclSzOY8HCKtqCxXGRNDd-P5cT81dmJohtI9x1S7xoVjYVomNZMfBEn5us270lgGBjwGo3100w149sPPlTLT3IeENKzkMPW-Hao-KoZoi8dVmu_wexqZIxvS4-ljLqu5sn8"/>
+</div>
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline text-3xl">add</span>
+<span class="text-[10px] font-bold text-outline-variant">ADD MEDIA</span>
+</div>
+</div>
+</section>
+<!-- CÁMARA 24H -->
+<section class="bg-surface-container-high rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+<h2 class="text-headline-sm font-bold text-on-surface">Streaming En Vivo 24h</h2>
+</div>
+<div class="flex items-center gap-3">
+<label class="text-xs font-bold text-on-surface-variant">ESTADO DEL STREAM</label>
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8 items-end">
+<div class="col-span-6 space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Stream Endpoint URL</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" placeholder="rtmp://fauma.live/species/tortuga-carey-01" type="text"/>
+</div>
+<div class="col-span-3 space-y-1">
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Acceso Mínimo</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20">
+<option>Héroe (Premium)</option>
+<option>Hermano</option>
+<option>Amigo</option>
+</select>
+</div>
+<div class="col-span-3">
+<button class="w-full py-3 bg-on-surface text-white rounded-xl font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                            Previsualizar Feed
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER ACTIONS (FLOATING) -->
+<div class="fixed bottom-8 right-12 flex gap-4 z-50">
+<div class="flex items-center bg-on-surface/90 backdrop-blur-xl rounded-full px-6 py-4 shadow-2xl gap-8">
+<div class="flex items-center gap-2 text-white/60 text-xs">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Último cambio hace 2 min</span>
+</div>
+<div class="h-4 w-px bg-white/20"></div>
+<div class="flex gap-4">
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors text-white">
+<span class="material-symbols-outlined">archive</span>
+</button>
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors text-white">
+<span class="material-symbols-outlined">delete</span>
+</button>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-all">
+                    Guardar Todo
+                </button>
+</div>
+</div>
+</div>
+</body></html>
